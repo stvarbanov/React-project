@@ -5,8 +5,8 @@ const initDatabase = require('./config/dbConfig.js')
 
 const app = express();
 
-require('./config/expressConfig.js')(app);
-require('./config/handlebarsConfig.js')(app);
+//require('./config/expressConfig.js')(app);
+//require('./config/handlebarsConfig.js')(app);
 
 app.use(routes);
 
