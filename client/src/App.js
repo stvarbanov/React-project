@@ -1,26 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import NavbarComponent from './components/NavbarComponent.js';
+import RegisterForm from './components/RegisterForm.js';
+import { Container, Col, Row } from 'react-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <form action="/api/connect" method="post"
-          className="form">
-          <button type="submit">Connected ? </button>
+
+        <NavbarComponent></NavbarComponent>
+
+        <main>
+
+          <Container>
+            <Row>
+              <Col lg={true}></Col>
+            </Row>
+            <Row>
+              <Col ><RegisterForm></RegisterForm></Col>
+
+
+            </Row>
+          </Container>
+
+
+
+          <form action="../api/connect" method="post"
+            className="form">
+          <button type ="submit">Connected?</button>
         </form>
+
+        </main>
+
+
       </header>
     </div>
   );
