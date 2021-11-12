@@ -7,10 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
 
-        <NavbarComponent></NavbarComponent>
+    <div className="App">
+      <NavbarComponent></NavbarComponent>
+
+      <header className="App-header">
 
         <main>
 
@@ -29,8 +30,8 @@ function App() {
 
           <form action="../api/connect" method="post"
             className="form">
-          <button type ="submit">Connected?</button>
-        </form>
+            <button type="submit">Connected?</button>
+          </form>
 
         </main>
 
