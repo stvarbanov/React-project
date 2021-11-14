@@ -6,6 +6,12 @@ import { Container, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const routes = {
+
+    // '/login':Login,
+    '/register': RegisterForm
+
+  }
   return (
 
     <div className="App">
@@ -15,7 +21,7 @@ function App() {
 
         <main>
 
-          <Container>
+          {/* <Container>
             <Row>
               <Col lg={true}></Col>
             </Row>
@@ -24,7 +30,7 @@ function App() {
 
 
             </Row>
-          </Container>
+          </Container> */}
 
 
 
