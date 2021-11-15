@@ -1,21 +1,35 @@
 import './App.css';
 import NavbarComponent from './components/NavbarComponent.js';
 import RegisterForm from './components/RegisterForm.js';
-import { Container, Col, Row } from 'react-bootstrap';
+import { useState } from 'react';
+import LoginComponent from './components/LoginComponent.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const [page, setPage] = useState('/home');
   const routes = {
 
-    // '/login':Login,
-    '/register': RegisterForm
+    '/register': <RegisterForm />,
+    '/login': <LoginComponent />
 
   }
+
+  const navigationChangeHandler = (path) => {
+
+    console.log(path);
+    setPage(path);
+  }
+
+
+
+
   return (
 
     <div className="App">
-      <NavbarComponent></NavbarComponent>
+      <NavbarComponent
+        navigationChangeHandler={navigationChangeHandler}
+      />
 
       <header className="App-header">
 
@@ -32,12 +46,13 @@ function App() {
             </Row>
           </Container> */}
 
-
-
-          <form action="../api/connect" method="post"
+          {routes[page] || <form action="../api/connect" method="post"
             className="form">
             <button type="submit">Connected?</button>
-          </form>
+          </form>}
+
+
+
 
         </main>
 

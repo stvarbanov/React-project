@@ -2,22 +2,24 @@ import { Container, Nav } from 'react-bootstrap';
 
 import Navbar from 'react-bootstrap/Navbar';
 
-const NavbarComponent = () => {
+const NavbarComponent = ({
+    navigationChangeHandler
+
+}) => {
+
 
     const onNavClick = (e) => {
         e.preventDefault();
 
         if (e.target.tagName == 'A') {
             let url = new URL(e.target.href);
-
-            console.log(url.pathname);
-
+            navigationChangeHandler(url.pathname);
         }
     };
 
     return (
         <header onClick={onNavClick}>
-            <Navbar bg="light navbar-fixed-top" sticky="top" expand="lg">
+            <Navbar bg="light" sticky="top" expand="lg">
                 < Container >
                     <Navbar.Brand href="/">SocialMeetWork</Navbar.Brand>
                     <div > и няма Network-Metwork</div>
