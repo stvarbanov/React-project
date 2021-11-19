@@ -11,22 +11,20 @@ const BoardComponent = () => {
                         <ListGroup.Item>
 
                             <Card >
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card></ListGroup.Item>
+                                <Row>
+                                    <Col> <h4 >Clarify Requirements</h4></Col>
+                                    <Col> <Button >Set in progress</Button>
+                                        <Button >Delete</Button> </Col>
+                                </Row>
+                            </Card>
+
+                        </ListGroup.Item>
 
                     </ListGroup>
                 </Col>
-                
+
                 <Col>
-                <h4>IN PROGRESS</h4>
+                    <h4>IN PROGRESS</h4>
                     <ListGroup>
                         <ListGroup.Item>
 
@@ -45,7 +43,7 @@ const BoardComponent = () => {
                     </ListGroup>
                 </Col>
                 <Col>
-                <h4>DONE</h4>
+                    <h4>DONE</h4>
                     <ListGroup>
                         <ListGroup.Item>
 
@@ -63,7 +61,7 @@ const BoardComponent = () => {
 
                     </ListGroup>
                 </Col>
-                
+
             </Row>
         </Container>
     );
