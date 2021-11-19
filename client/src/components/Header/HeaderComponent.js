@@ -1,28 +1,31 @@
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import './Header.css'
 const HeaderComponent = ({
     navigationChangeHandler
 
 }) => {
-   
+
 
     return (
-        <header >
-          <nav>
-            <a href="/">Kanban Boards</a>
-            <ul>
-    
-                <li><a href="/notes/my-notes/">My Notes</a></li>
-              
-                <li><a href="/auth/logout">Logout</a></li>
+        <Navbar bg="light" expand="lg" sticky="top">
+            <Container>
+                <Navbar.Brand href="/">Kanban Board</Navbar.Brand>
+                <Navbar.Toggle  aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="justify-content-end" style={{ width: "100%" }}>
 
-                <li><a href="/auth/login">Login</a></li>
-                <li><a href="/auth/register">Register</a></li>
-              
-            </ul>
-        </nav>  
-        
-        </header>
+                        <Nav.Link href="/notes/my">My Notes</Nav.Link>
+                        <Nav.Link href="/auth/logout">Register</Nav.Link>
+                        
+                        <Nav.Link href="/auth/login">Login</Nav.Link>
+                        <Nav.Link href="/auth/register">Register</Nav.Link>
 
+                     
+                       
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
 
     );
 }
