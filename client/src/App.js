@@ -1,5 +1,7 @@
 import './App.css';
+import BoardComponent from './components/BoardComponent/BoardComponent.js';
 import HeaderComponent from './components/Header/HeaderComponent.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -21,7 +23,7 @@ function App() {
       <header className="App-header">
 
         <main>
-
+          <BoardComponent></BoardComponent>
 
         </main>
 

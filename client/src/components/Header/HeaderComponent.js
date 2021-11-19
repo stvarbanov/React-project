@@ -3,22 +3,15 @@ const HeaderComponent = ({
     navigationChangeHandler
 
 }) => {
-    const onNavClick = (e) => {
-        e.preventDefault();
-
-        if (e.target.tagName == 'A') {
-            let url = new URL(e.target.href);
-            navigationChangeHandler(url.pathname);
-        }
-    };
+   
 
     return (
-        <header onClick={onNavClick}>
+        <header >
           <nav>
             <a href="/">Kanban Boards</a>
             <ul>
     
-                <li><a href="/view-my-notes">My Notes</a></li>
+                <li><a href="/notes/my-notes/">My Notes</a></li>
               
                 <li><a href="/auth/logout">Logout</a></li>
 
