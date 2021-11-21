@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Button, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, ListGroup } from 'react-bootstrap';
 import CardComponent from "../Card/CardComponent.js"
 import './Board.css'
 const BoardComponent = () => {

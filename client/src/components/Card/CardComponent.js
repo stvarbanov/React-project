@@ -1,4 +1,4 @@
-import { Row, Col } from 'react-bootstrap';
+import { } from 'react-bootstrap';
 import './Card.css'
 const CardComponent = () => {
 
