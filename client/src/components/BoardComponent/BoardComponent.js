@@ -1,11 +1,12 @@
 import { Container, Row, Col, Card, Button, ListGroup } from 'react-bootstrap';
+import CardComponent from "../Card/CardComponent.js"
 import './Board.css'
 const BoardComponent = () => {
 
     return (
 
 
-        
+
         <Container>
             <Row>
                 <Col>
@@ -13,13 +14,7 @@ const BoardComponent = () => {
                     <ListGroup>
                         <ListGroup.Item>
 
-                            <Card >
-                                <Row>
-                                    <Col> <h4 >Clarify Requirements</h4></Col>
-                                    <Col> <Button >Set in progress</Button>
-                                        <Button >Delete</Button> </Col>
-                                </Row>
-                            </Card>
+                            <CardComponent></CardComponent>
 
                         </ListGroup.Item>
 
@@ -31,36 +26,21 @@ const BoardComponent = () => {
                     <ListGroup>
                         <ListGroup.Item>
 
-                            <Card >
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card></ListGroup.Item>
+                            <CardComponent></CardComponent>
+
+                        </ListGroup.Item>
 
                     </ListGroup>
                 </Col>
                 <Col>
                     <h4>DONE</h4>
                     <ListGroup>
+                       
                         <ListGroup.Item>
 
-                            <Card >
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card></ListGroup.Item>
+                        <CardComponent></CardComponent>
+
+                        </ListGroup.Item>
 
                     </ListGroup>
                 </Col>

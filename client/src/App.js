@@ -24,8 +24,8 @@ function App() {
       <header className="App-header">
 
         <main>
-          <CarouselComponent></CarouselComponent>
-          <BoardComponent></BoardComponent>
+    
+          <BoardComponent ></BoardComponent>
 
         </main>
 
