@@ -1,16 +1,16 @@
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import './Card.css'
 const CardComponent = () => {
 
     return (
 
 
-        <div style={{ width: '500', height: '300' }}>
-            <Row>
-                <Col> <h4 >Clarify Requirements</h4></Col>
-                <Col> <Button >Set in progress</Button>
-                    <Button >Delete</Button> </Col>
-            </Row>
+        <div className="card">
+
+            <div id='conttainer'><h4 id="card-title">Clarify Requirements</h4>
+                <button id="card-button-state">Set in progress</button>
+                <button id="card-button delete" >Delete</button> </div>
+
         </div>
 
     );

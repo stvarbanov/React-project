@@ -1,1 +1,14 @@
-Col {border-style: dotted;}
+
+
+#card-title {
+    background-color:rgb(226, 187, 87);
+    width: auto;
+    height: 180px;
+    font-weight: 300;
+    
+  }
+
+  #card-button-state{
+    background-color:rgb(226, 187, 87);
+
+}

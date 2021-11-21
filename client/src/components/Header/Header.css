@@ -4,6 +4,7 @@ footer {
     justify-content: space-around;
     font-family: 'Myriad Pro Regular';
     font-weight: bold;
+    margin-bottom: 0!important;
 }
 
 nav a {
