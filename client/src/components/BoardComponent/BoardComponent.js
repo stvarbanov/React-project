@@ -3,6 +3,9 @@ import './Board.css'
 const BoardComponent = () => {
 
     return (
+
+
+        
         <Container>
             <Row>
                 <Col>
