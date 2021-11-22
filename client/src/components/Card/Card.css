@@ -1,14 +1,68 @@
-
+#container{
+  background-color:rgb(226, 187, 87);
+}
 
 #card-title {
-    background-color:rgb(226, 187, 87);
+  align-items: center;
     width: auto;
     height: 180px;
     font-weight: 300;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
     
   }
 
-  #card-button-state{
-    background-color:rgb(226, 187, 87);
+  .card-button{
+    height: auto;
+    width: auto;
+    align-items: center;
+    padding: 10px;
+    border-radius: 60px;
+    justify-content: space-around;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: black;
+    display:inline;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 
 }
+
+.addCard {
+  align-items: center;
+    width: auto;
+    height: 180px;
+    font-weight: 300;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    
+  }
+
+  #container-add {
+    align-items: center;
+    width: auto;
+    height: 20px;
+      font-weight: 300;
+      margin-left: 30px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      background-color:transparent;
+      
+      
+    }
+  
+    #card-title-add{
+      align-items: center;
+      width: auto;
+      font-weight: 300;
+      margin-left: 30px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+  
+    }

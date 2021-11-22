@@ -7,11 +7,12 @@ const CardComponent = () => {
 
         <div className="card">
 
-            <div id='conttainer'><h4 id="card-title">Clarify Requirements</h4>
-                <button id="card-button-state">Set in progress</button>
-                <button id="card-button delete" >Delete</button> </div>
+            <div id='container'><h4 id="card-title">Clarify Requirements</h4>
+                <button className="card-button state">Set in progress</button>
+                <button className="card-button delete" >Delete</button> </div>
 
         </div>
+      
 
     );
 }

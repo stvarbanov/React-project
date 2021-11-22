@@ -1,5 +1,6 @@
 import { Container, Row, Col, ListGroup } from 'react-bootstrap';
 import CardComponent from "../Card/CardComponent.js"
+import AddCardComponent from "../Card/addCard.js"
 import './Board.css'
 const BoardComponent = () => {
 
@@ -11,7 +12,7 @@ const BoardComponent = () => {
                     <ListGroup.Item>
 
                         <CardComponent></CardComponent>
-
+                         <AddCardComponent></AddCardComponent>   
                     </ListGroup.Item>
 
                 </ListGroup>
