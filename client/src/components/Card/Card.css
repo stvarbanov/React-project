@@ -1,6 +1,8 @@
 #container{
   background-color:rgb(226, 187, 87);
+  font-family: 'Myriad Pro Regular';
 }
+
 
 #card-title {
   align-items: center;
