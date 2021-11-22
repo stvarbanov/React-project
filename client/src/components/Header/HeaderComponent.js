@@ -14,7 +14,7 @@ const HeaderComponent = ({
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="justify-content-end" style={{ width: "100%" }}>
 
-                        <Nav.Link href="/notes/">Board</Nav.Link>
+                        <Nav.Link href="/board/">Board</Nav.Link>
                         <Nav.Link href="/notes/my">My Notes</Nav.Link>
                         <Nav.Link href="/auth/logout">Logout</Nav.Link>
 
