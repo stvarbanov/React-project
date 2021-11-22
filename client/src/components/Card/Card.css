@@ -1,3 +1,4 @@
+
 #container{
   background-color:rgb(226, 187, 87);
   font-family: 'Myriad Pro Regular';
@@ -12,9 +13,10 @@
   
     height: 50px;
     font-weight: 300;
-    margin-left: 30px;
+    margin-top: 10px;
+    margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
     
   }
 

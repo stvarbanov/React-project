@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const salt = 10;
 
 const userSchema = new mongoose.Schema({
-    name: {
+    email: {
         type: String,
         required: true,
     },
@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     password: {
+        type: String,
+        required: true,
+    },
+    color: {
         type: String,
         required: true,
     }
