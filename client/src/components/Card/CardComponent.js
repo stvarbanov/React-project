@@ -9,7 +9,7 @@ const CardComponent = () => {
 
             <div id='container'><h4 id="card-title">Clarify Requirements</h4>
                 <button className="card-button state">Set in progress</button>
-                <button className="card-button delete" >Delete</button> </div>
+                <button className="card-button-delete" >Delete</button> </div>
 
         </div>
       
