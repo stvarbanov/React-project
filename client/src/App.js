@@ -3,7 +3,7 @@ import BoardComponent from './components/BoardComponent/BoardComponent.js';
 import HeaderComponent from './components/Header/HeaderComponent.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import CarouselComponent from './components/CarouselComponent/CarouselComponent.js';
-import LoginComponent from './components/Login/LoginComponent.js';
+import LoginComponent from './components/Auth/Login/LoginComponent.js';
 import RegisterComponent from './components/Auth/Register/RegisterComponent.js';
 import { Routes, Route } from 'react-router-dom'
 
