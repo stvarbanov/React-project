@@ -5,7 +5,6 @@ const HeaderComponent = ({
 
 }) => {
 
-
     return (
         <Navbar bg="light" expand="lg" sticky="top">
             <Container>

@@ -1,6 +1,28 @@
 import '../../Auth/Auth.css'
+import { useState } from 'react';
+
 const RegisterComponent = () => {
 
+    const [userInfo, setUserInfo] = useState({});
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleRegisterFormSubmit = e => {
+        e.preventDefault();
+
+        // const { username, email, password, rePassword,color } = e.target;
+
+        // //TODO apply validation on these
+        // const usernameValue = username.value;
+        // const emailValue = email.value;
+        // const passwordValue = password.value;
+        // const rePasswordValue = rePassword.value;
+        // const colorValue=color.value;
+
+
+        // const inputsArr = [usernameValue, emailValue, passwordValue];
+
+        console.log(e.target.color.value);
+    }
     return (
         <div><section id="register-page">
             <div className="boxing">
@@ -9,13 +31,13 @@ const RegisterComponent = () => {
                     Create a profile here
                 </h2>
 
-                <form className="card-form" method="post">
+                <form className="card-form" onSubmit={handleRegisterFormSubmit}>
                     <div className="input">
-                        <input type="text" className="input-field" placeholder="ivan" id="username" name="username" value="" />
+                        <input type="text" className="input-field" placeholder="ivan98" id="username" name="username" />
                         <label className="username">Username</label>
                     </div>
                     <div className="input">
-                        <input type="text" className="input-field" placeholder="ivan@gmail.com" id="email" name="email" value="" />
+                        <input type="text" className="input-field" placeholder="ivan@gmail.com" id="email" name="email"  />
                         <label className="email">Email</label>
                     </div>
                     <div className="input">
@@ -27,7 +49,7 @@ const RegisterComponent = () => {
                         <label className="re-password">Repeat Password</label>
                     </div>
                     <div className="input">
-                        <input type="color" className="input-field" id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#ff0000" style={{ width: '30px', height: '30px' }} />
+                        <input type="color" className="input-field" id="html5colorpicker" name='color' onChange={()=>{'clickColor(0, -1, -1, 5)'}}  style={{ width: '30px', height: '30px' }} />
                         <label className="color">Choose your color</label>
                         <label className="color-note"></label>
                     </div>
