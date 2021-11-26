@@ -49,8 +49,8 @@ const RegisterComponent = () => {
                         <label className="re-password">Repeat Password</label>
                     </div>
                     <div className="input">
-                        <input type="color" className="input-field" id="html5colorpicker" name='color' onChange={()=>{'clickColor(0, -1, -1, 5)'}}  style={{ width: '30px', height: '30px' }} />
-                        <label className="color">Choose your color</label>
+                        <input type="color" className="input-field" id="html5colorpicker" name='color' onChange={()=>{'clickColor(0, -1, -1, 5)'}}  style={{ width: '120px', height: '32px' }} />
+                        <label className="color">Choose the color for your tasks</label>
                         <label className="color-note"></label>
                     </div>
                     <div className="action">
