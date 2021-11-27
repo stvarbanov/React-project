@@ -26,18 +26,19 @@ router.post('/login', isGuestRouteGuard, async (req, res) => {
 
 });
 
-router.get('/register', isGuestRouteGuard, (req, res) => {
-    res.render('auth/register');
+// router.get('/register', isGuestRouteGuard, (req, res) => {
+//     res.render('auth/register');
 
-});
+// });
 
 router.post('/register', async (req, res) => {
 
-    console.log(req.body);
-    
-    //TODO: change register fields 
-    const { username, email, password, rePassword, color } = req.body;
 
+    console.log('api called');
+    console.log(req.body);
+
+
+    const { username, email, password, rePassword, color } = req.body;
     if (password !== rePassword) {
 
         res.locals.error = 'Passwords do not match';
@@ -45,7 +46,7 @@ router.post('/register', async (req, res) => {
         return res.error('Pass no match')
     }
     try {
-        //TODO: change register fields 
+
         await authService.register({
             username,
             email,
@@ -68,6 +69,7 @@ router.post('/register', async (req, res) => {
     } catch (err) {
 
     }
+
 
 });
 

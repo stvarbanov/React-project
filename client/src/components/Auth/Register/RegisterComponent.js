@@ -1,7 +1,7 @@
 import '../../Auth/Auth.css'
 import { useState } from 'react';
 
-import {register} from '../../../services/authRequest.js';
+import { register } from '../../../services/authRequest.js';
 
 const RegisterComponent = () => {
 
@@ -11,23 +11,32 @@ const RegisterComponent = () => {
     const handleRegisterFormSubmit = e => {
         e.preventDefault();
 
-         const { username, email, password, rePassword,color } = e.target;
+        const formData = new FormData(e.target)
+        const body = {}
+        formData.forEach((value, property) => body[property] = value)
+        //  const { username, email, password, rePassword,color } = e.target;
 
-        //TODO apply validation on these
-        const usernameValue = username.value;
-        const emailValue = email.value;
-        const passwordValue = password.value;
-        const rePasswordValue = rePassword.value;
-        const colorValue=color.value;
-
-
-        const inputsArr = [usernameValue, emailValue, passwordValue,rePasswordValue,colorValue];
-
-
-        register(inputsArr)
+        // //TODO apply validation on these
+        // const usernameValue = username.value;
+        // const emailValue = email.value;
+        // const passwordValue = password.value;
+        // const rePasswordValue = rePassword.value;
+        // const colorValue=color.value;
 
 
+        // var payload = {
+        //     username: usernameValue,
+        //     email:emailValue,
+        //     password:passwordValue,
+        //     rePassword:rePasswordValue,
+        //     color:colorValue
+        // }
+
+        // console.log(body);
+        register(body).then(res => console.log(res.json()));
+            
     }
+
     return (
         <div><section id="register-page">
             <div className="boxing">
@@ -42,7 +51,7 @@ const RegisterComponent = () => {
                         <label className="username">Username</label>
                     </div>
                     <div className="input">
-                        <input type="text" className="input-field" placeholder="ivan@gmail.com" id="email" name="email"  />
+                        <input type="text" className="input-field" placeholder="ivan@gmail.com" id="email" name="email" />
                         <label className="email">Email</label>
                     </div>
                     <div className="input">
@@ -54,7 +63,7 @@ const RegisterComponent = () => {
                         <label className="re-password">Repeat Password</label>
                     </div>
                     <div className="input">
-                        <input type="color" className="input-field" id="html5colorpicker" name='color' onChange={()=>{'clickColor(0, -1, -1, 5)'}}  style={{ width: '120px', height: '32px' }} />
+                        <input type="color" className="input-field" id="html5colorpicker" name='color' onChange={() => { 'clickColor(0, -1, -1, 5)' }} style={{ width: '120px', height: '32px' }} />
                         <label className="color">Choose the color for your tasks</label>
                         <label className="color-note"></label>
                     </div>
