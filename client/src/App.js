@@ -6,10 +6,12 @@ import CarouselComponent from './components/CarouselComponent/CarouselComponent.
 import LoginComponent from './components/Auth/Login/LoginComponent.js';
 import RegisterComponent from './components/Auth/Register/RegisterComponent.js';
 import MyNotesComponent from './components/MyNotes/MyNotesComponent.js';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
+
+
 
 function App() {
-
+ 
   const navigationChangeHandler = (path) => {
     console.log(path);
   }

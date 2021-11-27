@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const { auth } = require('../middleware/authMiddle.js');
 
+
 function expressConfig(app) {
 
     app.use('/static',
@@ -10,6 +11,7 @@ function expressConfig(app) {
     app.use(express.urlencoded({ extended: true }));
     app.use(cookieParser())
     app.use(auth);
+   
 }
 
 module.exports = expressConfig;

@@ -1,6 +1,8 @@
 import '../../Auth/Auth.css'
 import { useState } from 'react';
 
+import {register} from '../../../services/authRequest.js';
+
 const RegisterComponent = () => {
 
     const [userInfo, setUserInfo] = useState({});
@@ -9,19 +11,22 @@ const RegisterComponent = () => {
     const handleRegisterFormSubmit = e => {
         e.preventDefault();
 
-        // const { username, email, password, rePassword,color } = e.target;
+         const { username, email, password, rePassword,color } = e.target;
 
-        // //TODO apply validation on these
-        // const usernameValue = username.value;
-        // const emailValue = email.value;
-        // const passwordValue = password.value;
-        // const rePasswordValue = rePassword.value;
-        // const colorValue=color.value;
+        //TODO apply validation on these
+        const usernameValue = username.value;
+        const emailValue = email.value;
+        const passwordValue = password.value;
+        const rePasswordValue = rePassword.value;
+        const colorValue=color.value;
 
 
-        // const inputsArr = [usernameValue, emailValue, passwordValue];
+        const inputsArr = [usernameValue, emailValue, passwordValue,rePasswordValue,colorValue];
 
-        console.log(e.target.color.value);
+
+        register(inputsArr)
+
+
     }
     return (
         <div><section id="register-page">

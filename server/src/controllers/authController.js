@@ -31,24 +31,27 @@ router.get('/register', isGuestRouteGuard, (req, res) => {
 
 });
 
-router.post('/register', isGuestRouteGuard, async (req, res) => {
+router.post('/register', async (req, res) => {
 
+    console.log(req.body);
+    
     //TODO: change register fields 
-    const { name, username, password, rePassword } = req.body;
+    const { username, email, password, rePassword, color } = req.body;
 
     if (password !== rePassword) {
 
         res.locals.error = 'Passwords do not match';
 
-        return res.render('auth/register');
+        return res.error('Pass no match')
     }
     try {
         //TODO: change register fields 
         await authService.register({
-            name,
             username,
+            email,
             password,
-            rePassword
+            rePassword,
+            color
         });
 
         // login after registration 
