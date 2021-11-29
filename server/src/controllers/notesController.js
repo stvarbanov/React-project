@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const demoService = require('../services/demoService.js');
+const demoService = require('../services/notesService.js');
 const { isAuthRouteGuard } = require('../middleware/authMiddle.js');
 
 
