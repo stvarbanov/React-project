@@ -3,6 +3,8 @@ const devUrl = `http://localhost:5000/auth`;
 
 export const register = data => {
 
+    console.log(data);
+
     return fetch(`${devUrl}/register`, {
         method: 'POST',
         headers: {

@@ -14,27 +14,11 @@ const RegisterComponent = () => {
         const formData = new FormData(e.target)
         const body = {}
         formData.forEach((value, property) => body[property] = value)
-        //  const { username, email, password, rePassword,color } = e.target;
-
-        // //TODO apply validation on these
-        // const usernameValue = username.value;
-        // const emailValue = email.value;
-        // const passwordValue = password.value;
-        // const rePasswordValue = rePassword.value;
-        // const colorValue=color.value;
-
-
-        // var payload = {
-        //     username: usernameValue,
-        //     email:emailValue,
-        //     password:passwordValue,
-        //     rePassword:rePasswordValue,
-        //     color:colorValue
-        // }
 
         // console.log(body);
-        register(body).then(res => console.log(res.json()));
-            
+        // console.log(JSON.stringify(body));
+        register(body);
+
     }
 
     return (

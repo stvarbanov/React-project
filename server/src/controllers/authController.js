@@ -26,49 +26,48 @@ router.post('/login', isGuestRouteGuard, async (req, res) => {
 
 });
 
-// router.get('/register', isGuestRouteGuard, (req, res) => {
-//     res.render('auth/register');
+router.get('/register', isGuestRouteGuard, (req, res) => {
+    res.render('auth/register');
 
-// });
+});
 
-router.post('/register', async (req, res) => {
+router.post('/register', (req, res) => {
 
-
-    console.log('api called');
+    console.log('----------------------');
     console.log(req.body);
 
 
-    const { username, email, password, rePassword, color } = req.body;
-    if (password !== rePassword) {
+    // const { username, email, password, rePassword, color } = req.body;
+    // if (password !== rePassword) {
 
-        res.locals.error = 'Passwords do not match';
+    //     res.locals.error = 'Passwords do not match';
 
-        return res.error('Pass no match')
-    }
-    try {
+    //     return res.error('Pass no match')
+    // }
+    // try {
 
-        await authService.register({
-            username,
-            email,
-            password,
-            rePassword,
-            color
-        });
+    //     await authService.register({
+    //         username,
+    //         email,
+    //         password,
+    //         rePassword,
+    //         color
+    //     });
 
-        // login after registration 
+    //     // login after registration 
 
-        let token = await authService.login({
-            username,
-            password
-        });
+    //     let token = await authService.login({
+    //         username,
+    //         password
+    //     });
 
-        res.cookie(AUTH_COOKIE, token);
+    //     res.cookie(AUTH_COOKIE, token);
 
-        res.redirect('/');
+    //     res.redirect('/');
 
-    } catch (err) {
+    // } catch (err) {
 
-    }
+    // }
 
 
 });
