@@ -18,7 +18,14 @@ const userSchema = new mongoose.Schema({
     color: {
         type: String,
         required: true,
-    }
+    },
+    myPosts: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Note'
+
+        }
+    ],
 
 });
 

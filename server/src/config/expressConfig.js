@@ -1,5 +1,5 @@
 const cookieParser = require('cookie-parser');
-// const { auth } = require('../middleware/authMiddle.js');
+const { auth } = require('../middleware/authMiddle.js');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
@@ -11,7 +11,7 @@ function expressConfig(app) {
     app.use(bodyParser.json());
     app.use(cors());
 
-    // app.use(auth());
+    app.use(auth);
 
 }
 

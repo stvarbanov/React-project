@@ -3,10 +3,7 @@ const authService = require('../services/authService.js');
 const { AUTH_COOKIE } = require('../constants.js');
 const { isAuthRouteGuard, isGuestRouteGuard } = require('../middleware/authMiddle.js');
 
-router.get('/login', isGuestRouteGuard, (req, res) => {
-    res.render('auth/login');
 
-});
 
 router.post('/login', isGuestRouteGuard, async (req, res) => {
 
@@ -17,7 +14,6 @@ router.post('/login', isGuestRouteGuard, async (req, res) => {
 
         res.cookie(AUTH_COOKIE, token);
 
-        res.redirect('/');
     } catch (error) {
 
         console.log(error);
@@ -26,16 +22,7 @@ router.post('/login', isGuestRouteGuard, async (req, res) => {
 
 });
 
-router.get('/register', isGuestRouteGuard, (req, res) => {
-    res.render('auth/register');
-
-});
-
-router.post('/register', (req, res) => {
-
-    console.log('----------------------');
-    console.log(req.body);
-
+router.post('/register', async (req, res) => {
 
     const { username, email, password, rePassword, color } = req.body;
     if (password !== rePassword) {
@@ -54,21 +41,19 @@ router.post('/register', (req, res) => {
             color
         });
 
+  
         // login after registration 
-
         let token = await authService.login({
             username,
             password
         });
-
+     
         res.cookie(AUTH_COOKIE, token);
 
-        res.redirect('/');
 
     } catch (err) {
 
     }
-
 
 });
 

@@ -4,7 +4,7 @@ const { PORT } = require('./constants.js');
 const initDatabase = require('./config/dbConfig.js')
 const app = express();
 
-require('./config/expressConfig.js')(app);
+ require('./config/expressConfig.js')(app);
 
 const cors = require('cors');
 app.use(cors());

@@ -1,6 +1,5 @@
 import '../../Auth/Auth.css'
 import { useState } from 'react';
-
 import { register } from '../../../services/authRequest.js';
 
 const RegisterComponent = () => {
@@ -15,9 +14,12 @@ const RegisterComponent = () => {
         const body = {}
         formData.forEach((value, property) => body[property] = value)
 
-        // console.log(body);
-        // console.log(JSON.stringify(body));
         register(body);
+
+
+        //after register success, redirect to home logged in
+        //FIXME  Token is not added to cookie 
+
 
     }
 
