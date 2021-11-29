@@ -6,7 +6,7 @@ const User = require('../models/User.js');
 
 exports.login = async ({ username, password }) => {
 
-
+console.log({ username, password });
   
 
     //check if user exists

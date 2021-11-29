@@ -2,6 +2,7 @@ const express = require('express');
 const routes = require('./routes.js')
 const { PORT } = require('./constants.js');
 const initDatabase = require('./config/dbConfig.js')
+
 const app = express();
 
  require('./config/expressConfig.js')(app);

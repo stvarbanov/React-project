@@ -28,7 +28,7 @@ function App() {
           <Route path="/" element={<CarouselComponent />} />
           <Route path="/auth/login" element={<LoginComponent />} />
           <Route path="/auth/register" element={<RegisterComponent />} />
-          <Route path="/auth/register" element={<MyNotesComponent />} />
+          <Route path="/notes/my-notes" element={<MyNotesComponent />} />
           
 
         </Routes>

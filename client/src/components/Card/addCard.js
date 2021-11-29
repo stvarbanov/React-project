@@ -1,14 +1,28 @@
-import { } from 'react-bootstrap';
+
+import { createNote } from '../../services/notesService.js';
 import './Card.css'
+
 const AddCardComponent = () => {
 
+    const addCardClick = e => {
+        e.preventDefault();
+
+        const title = document.getElementById('title-add').value;
+
+        createNote(title);
+       
+    
+    }
     return (
 
 
-        <div className="addCard">
+        <div className="input">
 
-            <div id='container-add'><h4 id="card-title-add">Quickly add note...</h4>
-                <button className="card-button add">Create note</button> </div>
+            <form id='container-add'>
+                <input type="text" className="input-field" placeholder="Quickly add note..." id="title-add" name="title-add" />
+
+                <button onClick={addCardClick} className="card-button add">Create note</button> 
+            </form>
 
         </div>
 

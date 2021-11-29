@@ -1,5 +1,5 @@
 const Note = require('../models/Note.js');
-//TODO rename demo
+
 
 exports.create = (demoData) => Note.create(demoData);
 
