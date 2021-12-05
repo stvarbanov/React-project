@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
 const authController = require('./controllers/authController');
-const workoutController = require('./controllers/workoutController');
+//const notesController = require('./controllers/notesController');
 
 router.use('/auth', authController);
-router.use('/workouts', workoutController);
+// router.use('/notes', notesController);
 
 module.exports = router;

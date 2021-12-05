@@ -1,18 +1,18 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
-const userValidator = require('../validation/userValidation');
+// const userValidator = require('../validation/userValidation');
 const { SALT_ROUNDS } = require('../config/config');
 
 const register = async data => {
-    let username = userValidator.usernameValidation(data.username);
-    let email = userValidator.emailValidation(data.email).toLowerCase();
-    let password = userValidator.passwordValidation(data.password);
-    let age = data.age;
-    let height = data.height;
-    let weight = data.weight;
-    let registrationDate = new Date;
+    // let username = userValidator.usernameValidation(data.username);
+    // let email = userValidator.emailValidation(data.email).toLowerCase();
+    // let password = userValidator.passwordValidation(data.password);
+    let username = data.username;
+    let email = data.email;
+    let password = data.password;
+    let color = data.color;
 
-    if (password !== data.passwordRep) {
+    if (password !== data.rePassword) {
         throw { errorMsg: 'Passwords must match!' };
     }
 
@@ -30,7 +30,7 @@ const register = async data => {
     let salt = await bcrypt.genSalt(SALT_ROUNDS);
     let hash = await bcrypt.hash(password, salt);
 
-    const newUser = new User({ username, email, password: hash, registrationDate, age, height, weight });
+    const newUser = new User({ username, email, password: hash, color });
 
     await newUser.save();
 
@@ -38,11 +38,14 @@ const register = async data => {
 };
 
 const login = async data => {
-    let email = userValidator.emailValidation(data.email);
-    let password = userValidator.passwordValidation(data.password);
-    let errorMsg = 'Invalid email / password!';
+    // let email = userValidator.emailValidation(data.email);
+    // let password = userValidator.passwordValidation(data.password);
+    let username = data.username;
+    let password = data.password;
 
-    let user = await User.findOne({ email });
+    let errorMsg = 'Invalid username / password!';
+
+    let user = await User.findOne({ username });
     if (!user) throw { errorMsg };
 
     let passwordCheck = await bcrypt.compare(password, user.password);
@@ -52,39 +55,6 @@ const login = async data => {
     return { user };
 };
 
-const changeData = async (data, userId) => {
-    const user = await User.findById(userId);
-
-    if (data.type == 'email') {
-        user.email = data.email;
-        return await user.save();
-    }
-
-    if (data.type == 'password') {
-        let { oldPassword, newPassword } = data;
-
-        newPassword = userValidator.passwordValidation(newPassword);
-
-        let passwordCheck = await bcrypt.compare(oldPassword, user.password);
-        if (!passwordCheck) throw { errorMsg: 'Wrong old password!' };
-
-        let salt = await bcrypt.genSalt(SALT_ROUNDS);
-        let hash = await bcrypt.hash(newPassword, salt);
-
-        user.password = hash;
-
-        return await user.save();
-    } 
-    if (data.type == 'personalInfo') {
-        const { age, weight, height } = data.personalInfoObject;
-
-        user.age = Number(age);
-        user.weight = Number(weight);
-        user.height = Number(height);
-
-        return await user.save();
-    }
-}
 
 const resetProgress = async userId => {
     const user = await User.findById(userId);
@@ -119,7 +89,6 @@ const resetPassword = async data => {
 module.exports = {
     register,
     login,
-    changeData,
     resetProgress,
     checkEmail,
     resetPassword,

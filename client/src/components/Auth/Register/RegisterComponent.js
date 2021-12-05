@@ -1,11 +1,13 @@
 import '../../Auth/Auth.css'
 import { useState } from 'react';
-import { register } from '../../../services/authRequest.js';
+import { register, login } from '../../../services/authRequest.js';
+// import { useHistory } from 'react-router-dom';
 
 const RegisterComponent = () => {
 
     const [userInfo, setUserInfo] = useState({});
     const [errorMessage, setErrorMessage] = useState('');
+    // const history = useHistory();
 
     const handleRegisterFormSubmit = e => {
         e.preventDefault();
@@ -14,11 +16,19 @@ const RegisterComponent = () => {
         const body = {}
         formData.forEach((value, property) => body[property] = value)
 
-        register(body);
 
+        register(body)
+            .then(res => res.json())
+            .then(res => {
+                if (res.message.errorMsg) {
+                    setErrorMessage(res.message.errorMsg);
+                } else {
+                    localStorage.setItem('user', JSON.stringify(res.user));
+                    // history.push('/');
+                }
 
-        //after register success, redirect to home logged in
-        //FIXME  Token is not added to cookie 
+            })
+        login({ username: body.username, password: body.password })
 
 
     }
