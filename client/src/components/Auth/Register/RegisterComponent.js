@@ -1,13 +1,13 @@
 import '../../Auth/Auth.css'
 import { useState } from 'react';
-import { register, login } from '../../../services/authRequest.js';
-// import { useHistory } from 'react-router-dom';
+import { register } from '../../../services/authRequest.js';
+import { useNavigate } from 'react-router';
 
 const RegisterComponent = () => {
 
     const [userInfo, setUserInfo] = useState({});
     const [errorMessage, setErrorMessage] = useState('');
-    // const history = useHistory();
+    const navigate = useNavigate();
 
     const handleRegisterFormSubmit = e => {
         e.preventDefault();
@@ -24,12 +24,12 @@ const RegisterComponent = () => {
                     setErrorMessage(res.message.errorMsg);
                 } else {
                     localStorage.setItem('user', JSON.stringify(res.user));
-                    // history.push('/');
+                    navigate('/');   
                 }
 
             })
-        login({ username: body.username, password: body.password })
-
+        // login({ username: body.username, password: body.password })
+   
 
     }
 
