@@ -8,47 +8,38 @@ import RegisterComponent from './components/Auth/Register/RegisterComponent.js';
 import MyNotesComponent from './components/MyNotes/MyNotesComponent.js';
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
+import { AuthContext } from '../src/contexts/AuthContext.js';
 
 function App() {
-  const [loggedIn, setloggedIn] = useState(false);
+  const [] = useState({});
 
 
-  const user = localStorage.getItem('user');
-  useEffect(() => {
-    if (user) {
-      setloggedIn(true);
-    }
-  }, [user]);
-
-
-  const navigationChangeHandler = (path) => {
-    console.log(path);
+  const onLogin = (authData) => {
+    console.log(authData);
   }
-  const handleLogin = bool => {
-    if (bool) {
-      setloggedIn(true);
-    }
+  const onLogout = () => {
+    console.log('on logout');
   }
 
   return (
+    <AuthContext.Provider value>
 
-    <div className="App">
-      <HeaderComponent
-        navigationChangeHandler={navigationChangeHandler} loggedIn={loggedIn} />
+      <div className="App">
+        <HeaderComponent />
 
-      <main>
-        <Routes>
-          <Route path="/board/" element={<BoardComponent />} />
-          <Route path="/" element={<CarouselComponent />} />
-          <Route path="/auth/login" element={<LoginComponent />} />
-          <Route path="/auth/register" element={<RegisterComponent />} />
-          <Route path="/notes/my-notes" element={<MyNotesComponent />} />
+        <main>
+          <Routes>
+            <Route path="/board/" element={<BoardComponent />} />
+            <Route path="/" element={<CarouselComponent />} />
+            <Route path="/auth/login" element={<LoginComponent />} />
+            <Route path="/auth/register" element={<RegisterComponent />} />
+            <Route path="/notes/my-notes" element={<MyNotesComponent />} />
 
 
-        </Routes>
-      </main>
-    </div>
+          </Routes>
+        </main>
+      </div>
+    </AuthContext.Provider>
   );
 }
 
