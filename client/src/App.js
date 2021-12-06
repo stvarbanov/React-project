@@ -7,32 +7,30 @@ import LoginComponent from './components/Auth/Login/LoginComponent.js';
 import RegisterComponent from './components/Auth/Register/RegisterComponent.js';
 import MyNotesComponent from './components/MyNotes/MyNotesComponent.js';
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AuthContext } from '../src/contexts/AuthContext.js';
+import useLocalStorage from '../src/hooks/useLocalStorage.js';
+
+const initialAuthState = {
+  _id: '',
+  email: '',
+  accessToken: '',
+};
+
 
 function App() {
 
-  
-  const [user, setUser] = useState({
-    id: "",
-    email: "",
-    username: ""
-  });
+  const [user, setUser] = useLocalStorage('user', initialAuthState)
 
-
-  const onLogin = (authData) => {
-
-    console.log(authData);
+  const login = (authData) => {
     setUser(authData);
-
-    console.log(user);
   }
-  const onLogout = () => {
+  const logout = () => {
     console.log('on logout');
   }
 
   return (
-    <AuthContext.Provider value>
+    <AuthContext.Provider value={{ user, login, logout }}>
 
       <div className="App">
         <HeaderComponent username={user.username} />
@@ -41,7 +39,7 @@ function App() {
           <Routes>
             <Route path="/board/" element={<BoardComponent />} />
             <Route path="/" element={<CarouselComponent />} />
-            <Route path="/auth/login" element={<LoginComponent onLogin={onLogin} />} />
+            <Route path="/auth/login" element={<LoginComponent login={login} />} />
             <Route path="/auth/register" element={<RegisterComponent />} />
             <Route path="/notes/my-notes" element={<MyNotesComponent />} />
 

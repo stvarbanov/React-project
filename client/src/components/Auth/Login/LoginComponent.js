@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 
 
 const LoginComponent = ({
-    onLogin
+    login
 }) => {
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('');
@@ -26,7 +26,7 @@ const LoginComponent = ({
                 } else {
                     setErrorMessage(null)
                     localStorage.setItem('user', JSON.stringify(res.user));
-                    onLogin(res.user);
+                    login(res.user);
                     navigate('/');   
                 }
             });
