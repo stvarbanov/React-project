@@ -3,7 +3,10 @@ import { login } from '../../../services/authRequest.js';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
-const LoginComponent = () => {
+
+const LoginComponent = ({
+    onLogin
+}) => {
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -23,6 +26,7 @@ const LoginComponent = () => {
                 } else {
                     setErrorMessage(null)
                     localStorage.setItem('user', JSON.stringify(res.user));
+                    onLogin(res.user);
                     navigate('/');   
                 }
             });

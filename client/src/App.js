@@ -11,11 +11,21 @@ import { useState, useEffect } from 'react';
 import { AuthContext } from '../src/contexts/AuthContext.js';
 
 function App() {
-  const [] = useState({});
+
+  
+  const [user, setUser] = useState({
+    id: "",
+    email: "",
+    username: ""
+  });
 
 
   const onLogin = (authData) => {
+
     console.log(authData);
+    setUser(authData);
+
+    console.log(user);
   }
   const onLogout = () => {
     console.log('on logout');
@@ -25,13 +35,13 @@ function App() {
     <AuthContext.Provider value>
 
       <div className="App">
-        <HeaderComponent />
+        <HeaderComponent username={user.username} />
 
         <main>
           <Routes>
             <Route path="/board/" element={<BoardComponent />} />
             <Route path="/" element={<CarouselComponent />} />
-            <Route path="/auth/login" element={<LoginComponent />} />
+            <Route path="/auth/login" element={<LoginComponent onLogin={onLogin} />} />
             <Route path="/auth/register" element={<RegisterComponent />} />
             <Route path="/notes/my-notes" element={<MyNotesComponent />} />
 
