@@ -39,7 +39,7 @@ function App() {
           <Routes>
             <Route path="/board/" element={<BoardComponent />} />
             <Route path="/" element={<CarouselComponent />} />
-            <Route path="/auth/login" element={<LoginComponent login={login} />} />
+            <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
             <Route path="/auth/register" element={<RegisterComponent />} />
             <Route path="/notes/my-notes" element={<MyNotesComponent />} />
 

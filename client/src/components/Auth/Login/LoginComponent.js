@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 
 
 const LoginComponent = ({
-    login
+    isLogin
 }) => {
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('');
@@ -16,7 +16,7 @@ const LoginComponent = ({
 
         const formData = new FormData(e.target)
         const body = {}
-        formData.forEach((value, property) => body[property] = value)
+        formData.forEach((value, property) => body[property] = value);
 
         login(body)
             .then(res => res.json())
@@ -26,7 +26,7 @@ const LoginComponent = ({
                 } else {
                     setErrorMessage(null)
                     localStorage.setItem('user', JSON.stringify(res.user));
-                    login(res.user);
+                    isLogin(res.user);
                     navigate('/');   
                 }
             });
