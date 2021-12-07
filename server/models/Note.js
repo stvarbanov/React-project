@@ -26,4 +26,8 @@ const noteSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Workout', noteSchema);
+
+
+const Note = mongoose.model('Note', noteSchema);
+
+module.exports = Note;

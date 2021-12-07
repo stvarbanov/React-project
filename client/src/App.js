@@ -7,14 +7,13 @@ import LoginComponent from './components/Auth/Login/LoginComponent.js';
 import RegisterComponent from './components/Auth/Register/RegisterComponent.js';
 import MyNotesComponent from './components/MyNotes/MyNotesComponent.js';
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import { AuthContext } from '../src/contexts/AuthContext.js';
 import useLocalStorage from '../src/hooks/useLocalStorage.js';
 
 const initialAuthState = {
-  _id: '',
+  id: '',
   email: '',
-  accessToken: '',
+  username: '',
 };
 
 
@@ -37,7 +36,7 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/board/" element={<BoardComponent />} />
+            <Route path="/board/" element={<BoardComponent userId={user.id}/>} />
             <Route path="/" element={<CarouselComponent />} />
             <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
             <Route path="/auth/register" element={<RegisterComponent />} />
