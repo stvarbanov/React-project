@@ -25,8 +25,9 @@ const createNote = async (title, userId) => {
     return await note.save();
 };
 
-
+const getAllToDos = async () => Note.find({ state: 'To Do' }).lean();
 
 module.exports = {
-    createNote
+    createNote,
+    getAllToDos
 }

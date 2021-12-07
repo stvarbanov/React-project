@@ -1,20 +1,32 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Container, Row, Col, ListGroup } from 'react-bootstrap';
 import CardComponent from "../Card/CardComponent.js"
 import AddCardComponent from "../Card/addCard.js"
 import './Board.css'
+import { useEffect, useState } from 'react';
+import { getToDos } from '../../services/notesService.js';
+
 const BoardComponent = ({
     userId
 }) => {
+
+    const [toDoNotes, setToDoNotes] = useState();
+
+    useEffect(async () => {
+        let todos = await getToDos();
+        setToDoNotes(todos);
+    }, []);
+
 
     return (<Container >
         <Row >
             <Col >
                 <h4 className="col-title">TO DO</h4>
                 <ListGroup>
-                    <ListGroup.Item>
+                    <ListGroup.Item notes={toDoNotes}>
 
                         <CardComponent></CardComponent>
-                         <AddCardComponent userId={userId} ></AddCardComponent>   
+                        <AddCardComponent userId={userId} ></AddCardComponent>
                     </ListGroup.Item>
 
                 </ListGroup>
@@ -25,7 +37,7 @@ const BoardComponent = ({
                 <ListGroup>
                     <ListGroup.Item>
 
-                        <CardComponent></CardComponent>
+
 
                     </ListGroup.Item>
 
@@ -37,7 +49,7 @@ const BoardComponent = ({
 
                     <ListGroup.Item>
 
-                        <CardComponent></CardComponent>
+
 
                     </ListGroup.Item>
 

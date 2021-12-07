@@ -15,3 +15,16 @@ export const createNote = (title, userId) => {
     });
 
 }
+export const getToDos = () => {
+    
+
+    return fetch(`${devUrl}/to-do`, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+
+    });
+
+}
