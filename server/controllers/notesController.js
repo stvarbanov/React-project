@@ -4,7 +4,6 @@ const notesService = require('../services/notesService');
 
 router.post('/create/:userId/:title', (req, res) => {
 
-
     notesService.createNote(req.params.title, req.params.userId)
         .then(data => {
             res.status(201).json({ message: 'Successfully created note!', noteId: data._id });
@@ -15,10 +14,10 @@ router.post('/create/:userId/:title', (req, res) => {
 
 router.get('/to-do', (req, res) => {
     notesService.getAllToDos()
-    .then(data => {
-        res.status(201).json();
-    })
-    .catch(err => console.log(err));
+        .then(data => {
+            res.status(201).json({ data });
+        })
+        .catch(err => console.log(err));
 
 
 });

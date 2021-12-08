@@ -1,4 +1,4 @@
-const { json } = require('body-parser');
+
 const Note = require('../models/Note.js');
 const User = require('../models/User');
 // const { nameValidation, numberValidation } = require('../validation/NotesValidation');
@@ -25,7 +25,12 @@ const createNote = async (title, userId) => {
     return await note.save();
 };
 
-const getAllToDos = async () => Note.find({ state: 'To Do' }).lean();
+const getAllToDos = async () => {
+
+    return await Note.find({ state: 'To Do' });
+//     console.log(notes);
+//     return notes;
+ }
 
 module.exports = {
     createNote,

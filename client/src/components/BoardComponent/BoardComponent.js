@@ -13,8 +13,16 @@ const BoardComponent = ({
     const [toDoNotes, setToDoNotes] = useState();
 
     useEffect(async () => {
-        let todos = await getToDos();
-        setToDoNotes(todos);
+        await getToDos()
+            .then(res => res.json())
+            .then((res) => {
+                console.log('back here');
+                console.log(res);
+                // setToDoNotes(todos)
+            }).catch((err) => {
+                console.log(err);
+            });
+
     }, []);
 
 
