@@ -33,6 +33,14 @@
     display:inline;
   
 }
+.card-button-details{
+  background-color: transparent;
+  height: 5px;
+  font-size: 40px;
+  align-items: center;
+  border-style: none;
+
+}
 .card-button:hover{
     background-color: purple;
     color: white;
@@ -41,6 +49,13 @@
     background-color: red;
     color: white;
 }
+.card-button-details:hover{
+    color: blueviolet;
+    font-size: 50px;
+  
+}
+
+.card-button-details:hover 
 
 .addCard {
   align-items: center;
