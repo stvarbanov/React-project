@@ -40,10 +40,14 @@ const BoardComponent = ({
         <Row >
             <Col >
                 <h4 className="col-title">TO DO</h4>
-               
-                    <ListOfNotesComponent userId={userId} notes={toDoNotes} />
+
+                <ListOfNotesComponent userId={userId} notes={toDoNotes} />
+                {userId ? (
                     <AddCardComponent userId={userId} />
-                
+                ) : (
+                    <h4></h4>
+                )}
+
             </Col>
 
             <Col>
