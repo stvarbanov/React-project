@@ -11,7 +11,7 @@ const ListOfNotesComponent = ({
     return (
         <ListGroup.Item>
             {notes.map((x) =>              
-                <CardComponent key={x._id} note={x} />
+                <CardComponent key={x._id} note={x} userId={userId} />
             )}
             
         </ListGroup.Item>

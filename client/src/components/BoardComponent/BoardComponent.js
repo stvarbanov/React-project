@@ -41,7 +41,7 @@ const BoardComponent = ({
             <Col >
                 <h4 className="col-title">TO DO</h4>
                
-                    <ListOfNotesComponent notes={toDoNotes} />
+                    <ListOfNotesComponent userId={userId} notes={toDoNotes} />
                     <AddCardComponent userId={userId} />
                 
             </Col>
@@ -50,7 +50,7 @@ const BoardComponent = ({
                 <h4 className="col-title">IN PROGRESS</h4>
                 <ListGroup>
                     <ListGroup.Item>
-                        <ListOfNotesComponent notes={inProgressNotes} />
+                        <ListOfNotesComponent userId={userId} notes={inProgressNotes} />
                     </ListGroup.Item>
 
                 </ListGroup>
@@ -59,7 +59,7 @@ const BoardComponent = ({
                 <h4 className="col-title">DONE</h4>
                 <ListGroup>
                     <ListGroup.Item>
-                        <ListOfNotesComponent notes={doneNotes} />
+                        <ListOfNotesComponent userId={userId} notes={doneNotes} />
                     </ListGroup.Item>
 
                 </ListGroup>
