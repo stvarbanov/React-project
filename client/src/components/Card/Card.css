@@ -21,6 +21,7 @@
   }
 
   .card-button,.card-button-delete{
+
     height: auto;
     width: auto;
     align-items: center;
@@ -34,6 +35,7 @@
   
 }
 .card-button-details{
+
   background-color: transparent;
   height: 5px;
   font-size: 40px;
@@ -42,6 +44,7 @@
 
 }
 .card-button:hover{
+  
     background-color: purple;
     color: white;
 }
@@ -54,6 +57,7 @@
     font-size: 50px;
   
 }
+
 
 .card-button-details:hover 
 
