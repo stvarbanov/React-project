@@ -20,3 +20,13 @@ export const getToDos = () => {
     return fetch(`${devUrl}/to-do`);
 
 }
+export const getInProgress = () => {
+
+    return fetch(`${devUrl}/in-progress`);
+
+}
+export const getDone= () => {
+
+    return fetch(`${devUrl}/done`);
+
+}

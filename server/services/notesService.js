@@ -26,8 +26,13 @@ const createNote = async (title, userId) => {
 };
 
 const getAllToDos = async () => await Note.find({ state: 'To Do' }).populate('owner');
+const getInProgress = async () => await Note.find({ state: 'In Progress' }).populate('owner');
+const getAllDone = async () => await Note.find({ state: 'Done' }).populate('owner');
 
 module.exports = {
     createNote,
-    getAllToDos
+    getAllToDos,
+    getInProgress,
+    getAllDone
+
 }

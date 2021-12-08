@@ -22,9 +22,19 @@ router.get('/to-do', (req, res) => {
 
 });
 router.get('/in-progress', (req, res) => {
+    notesService.getInProgress()
+        .then(data => {
+            res.status(201).json({ inprogress: data });
+        })
+        .catch(err => console.log(err));
 
 });
 router.get('/done', (req, res) => {
+    notesService.getAllDone()
+    .then(data => {
+        res.status(201).json({ done: data });
+    })
+    .catch(err => console.log(err));
 
 });
 
