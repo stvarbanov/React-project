@@ -15,10 +15,9 @@ const BoardComponent = ({
     useEffect(async () => {
         await getToDos()
             .then(res => res.json())
-            .then((res) => {
-                console.log('back here');
-                console.log(res);
-                // setToDoNotes(todos)
+            .then((data) => {
+                console.log(data);
+                setToDoNotes(data);
             }).catch((err) => {
                 console.log(err);
             });
