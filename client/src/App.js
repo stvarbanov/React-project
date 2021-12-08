@@ -22,7 +22,6 @@ function App() {
   const [user, setUser] = useLocalStorage('user', initialAuthState)
 
   const login = (authData) => {
-    console.log(authData);
     setUser(authData);
   }
   const logout = () => {

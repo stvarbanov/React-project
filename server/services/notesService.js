@@ -25,7 +25,7 @@ const createNote = async (title, userId) => {
     return await note.save();
 };
 
-const getAllToDos = async () => await Note.find({ state: 'To Do' });
+const getAllToDos = async () => await Note.find({ state: 'To Do' }).populate('owner');
 
 module.exports = {
     createNote,

@@ -2,7 +2,7 @@
 const devUrl = `http://localhost:5000/notes`;
 
 export const createNote = (title, userId) => {
-  
+
 
     return fetch(`${devUrl}/create/${userId}/${title}`, {
         method: 'POST',
@@ -17,13 +17,6 @@ export const createNote = (title, userId) => {
 }
 export const getToDos = () => {
 
-    return fetch(`${devUrl}/to-do`, {
-        method: 'GET',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-
-    });
+    return fetch(`${devUrl}/to-do`);
 
 }

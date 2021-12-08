@@ -15,7 +15,7 @@ router.post('/create/:userId/:title', (req, res) => {
 router.get('/to-do', (req, res) => {
     notesService.getAllToDos()
         .then(data => {
-            res.status(201).json({ data });
+            res.status(201).json({ todos: data });
         })
         .catch(err => console.log(err));
 
