@@ -40,10 +40,10 @@ const BoardComponent = ({
         <Row >
             <Col >
                 <h4 className="col-title">TO DO</h4>
-                <ListGroup>
+               
                     <ListOfNotesComponent notes={toDoNotes} />
                     <AddCardComponent userId={userId} />
-                </ListGroup>
+                
             </Col>
 
             <Col>

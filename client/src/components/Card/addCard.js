@@ -21,7 +21,7 @@ const AddCardComponent = ({
         <div className="input">
 
             <form id='container-add'>
-                <input type="text" className="input-field" placeholder="Quickly add note..." id="title-add" name="title-add" />
+                <input type="text" className="input-field" placeholder="Quickly add a new note..." id="title-add" name="title-add" />
 
                 <button onClick={addCardClick} className="card-button add">Create note</button>
             </form>

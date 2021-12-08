@@ -9,7 +9,3 @@ Col {border-style: dotted;
     font-weight: 300;
 }
 
-.col:hover,
-.list-group-item:hover{
-    background-color:skyblue;
-}
