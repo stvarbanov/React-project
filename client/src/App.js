@@ -9,6 +9,9 @@ import MyNotesComponent from './components/MyNotes/MyNotesComponent.js';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContext } from '../src/contexts/AuthContext.js';
 import useLocalStorage from '../src/hooks/useLocalStorage.js';
+// import { NotificationProvider } from './contexts/NotificationContext.js';
+// import Notification from './components/Notification/Notification.js';
+
 
 const initialAuthState = {
   id: '',
@@ -31,21 +34,22 @@ function App() {
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
 
-      <div className="App">
+          {/* <NotificationProvider> */}
+      <div className="App" notification>
         <HeaderComponent username={user.username} />
 
         <main>
-          <Routes>
-            <Route path="/board/" element={<BoardComponent userId={user.id}/>} />
-            <Route path="/" element={<CarouselComponent />} />
-            <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
-            <Route path="/auth/register" element={<RegisterComponent />} />
-            <Route path="/notes/my-notes" element={<MyNotesComponent />} />
+            <Routes>
+              <Route path="/board/" element={<BoardComponent userId={user.id} />} />
+              <Route path="/" element={<CarouselComponent />} />
+              <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
+              <Route path="/auth/register" element={<RegisterComponent />} />
+              <Route path="/notes/my-notes" element={<MyNotesComponent />} />
 
-
-          </Routes>
+            </Routes>
         </main>
       </div>
+          {/* </NotificationProvider> */}
     </AuthContext.Provider>
   );
 }
