@@ -9,6 +9,7 @@ import MyNotesComponent from './components/MyNotes/MyNotesComponent.js';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContext } from '../src/contexts/AuthContext.js';
 import useLocalStorage from '../src/hooks/useLocalStorage.js';
+import TeamComponent from './components/TeamMembers/TeamComponent.js';
 // import { NotificationProvider } from './contexts/NotificationContext.js';
 // import Notification from './components/Notification/Notification.js';
 
@@ -45,6 +46,7 @@ function App() {
               <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
               <Route path="/auth/register" element={<RegisterComponent />} />
               <Route path="/notes/my-notes" element={<MyNotesComponent />} />
+              <Route path="/auth/users" element={<TeamComponent />} />
 
             </Routes>
         </main>

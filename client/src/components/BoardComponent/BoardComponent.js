@@ -34,7 +34,6 @@ const BoardComponent = ({
 
     }, []);
 
-    console.log('this ' + toDoNotes);
 
     return (<Container >
         <Row >
@@ -53,18 +52,17 @@ const BoardComponent = ({
             <Col>
                 <h4 className="col-title">IN PROGRESS</h4>
                 <ListGroup>
-                    <ListGroup.Item>
+            
                         <ListOfNotesComponent userId={userId} notes={inProgressNotes} />
-                    </ListGroup.Item>
 
                 </ListGroup>
             </Col>
             <Col>
                 <h4 className="col-title">DONE</h4>
                 <ListGroup>
-                    <ListGroup.Item>
+                   
                         <ListOfNotesComponent userId={userId} notes={doneNotes} />
-                    </ListGroup.Item>
+                  
 
                 </ListGroup>
             </Col>
