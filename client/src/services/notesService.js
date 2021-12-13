@@ -25,8 +25,13 @@ export const getInProgress = () => {
     return fetch(`${devUrl}/in-progress`);
 
 }
-export const getDone= () => {
+export const getDone = () => {
 
     return fetch(`${devUrl}/done`);
+
+}
+export const getDetails = (noteId) => {
+
+    return fetch(`${devUrl}/details/${noteId}`);
 
 }

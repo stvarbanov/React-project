@@ -52,16 +52,11 @@
     background-color: red;
     color: white;
 }
-.card-button-details:hover{
-    color: blueviolet;
-    font-size: 50px;
-    
-  
-}
+
 #container:hover .card-button-see-details{
   visibility: visible;
 }
-.card-button-see-details{
+.card-button-see-details,Button{
   visibility: hidden;
   height: auto;
   width: auto;

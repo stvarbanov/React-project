@@ -1,3 +1,5 @@
+import { Navigate, Route } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import './Card.css'
 const CardComponent = ({
     note, userId
@@ -15,13 +17,14 @@ const CardComponent = ({
                     {/* <button className="card-button state">Move state</button> */}
                     {/* <button className="card-button-delete" >Delete</button> */}
 
-                    <button className="card-button-see-details">Show Details</button>
+                    <Button className="card-button-see-details" href={'/notes/details/' + note._id} >Show Details</Button>
                 </div>
             ) : (
                 <div id='container' style={styleRules}>
                     <h4 id="card-title">{note.title}</h4>
                 </div>
-            )}
+            )
+            }
         </div >
 
 

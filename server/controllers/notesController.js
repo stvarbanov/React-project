@@ -38,5 +38,15 @@ router.get('/done', (req, res) => {
 
 });
 
+router.get('/details/:noteId', (req, res) => {
+    notesService.getNoteById(req.params.noteId)
+    .then(data => {
+        res.status(201).json({note:data});
+    })
+    .catch(err => console.log(err));
+
+});
+
+
 
 module.exports = router;
