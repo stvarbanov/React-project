@@ -2,9 +2,9 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 import './Header.css'
 
 const HeaderComponent = ({
-    username,
+    username, logout
 }) => {
-    
+
     let guestNavbar = (
         <Nav>
             <Nav.Link href="/auth/login">Login</Nav.Link>
@@ -17,7 +17,7 @@ const HeaderComponent = ({
             <Nav.Link> Hello, {username}</Nav.Link>
             <Nav.Link href="/notes/my">My Notes</Nav.Link>
             <Nav.Link href="/auth/users">Team Members</Nav.Link>
-            <Nav.Link href="/auth/logout" >Logout</Nav.Link>
+            <Nav.Link href="/auth/logout" onClick={logout}>Logout</Nav.Link>
         </Nav>
     );
 

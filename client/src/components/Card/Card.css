@@ -55,11 +55,27 @@
 .card-button-details:hover{
     color: blueviolet;
     font-size: 50px;
+    
   
+}
+#container:hover .card-button-see-details{
+  visibility: visible;
+}
+.card-button-see-details{
+  visibility: hidden;
+  height: auto;
+  width: auto;
+  align-items: center;
+  padding: 10px;
+  border-radius: 60px;
+  justify-content: space-around;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+
 }
 
 
-.card-button-details:hover 
 
 .addCard {
   align-items: center;

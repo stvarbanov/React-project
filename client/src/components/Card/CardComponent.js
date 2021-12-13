@@ -12,9 +12,10 @@ const CardComponent = ({
             {userId ? (
                 <div id='container' style={styleRules}>
                     <h4 id="card-title">{note.title}</h4>
-                    <button className="card-button state">Move state</button>
-                    <button className="card-button-delete" >Delete</button>
-                    <button className="card-button-details">...</button>
+                    {/* <button className="card-button state">Move state</button> */}
+                    {/* <button className="card-button-delete" >Delete</button> */}
+
+                    <button className="card-button-see-details">Show Details</button>
                 </div>
             ) : (
                 <div id='container' style={styleRules}>

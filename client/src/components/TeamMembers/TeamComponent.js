@@ -1,6 +1,6 @@
 import { Container, Row  } from 'react-bootstrap';
 
-import './MyNotes.css';
+import './Team.css';
 const TeamComponent = () => {
 
     return (<Container >

@@ -29,7 +29,7 @@ function App() {
     setUser(authData);
   }
   const logout = () => {
-    console.log('on logout');
+    console.log('logged out')
   }
 
   return (
