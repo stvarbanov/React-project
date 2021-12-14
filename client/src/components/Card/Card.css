@@ -56,7 +56,7 @@
 #container:hover .card-button-see-details{
   visibility: visible;
 }
-.card-button-see-details,Button{
+.card-button-see-details, .Button{
   visibility: hidden;
   height: auto;
   width: auto;

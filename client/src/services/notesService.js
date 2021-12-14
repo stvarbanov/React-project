@@ -30,8 +30,8 @@ export const getDone = () => {
     return fetch(`${devUrl}/done`);
 
 }
-export const getDetails = (noteId) => {
+export const getDetails = async (noteId) => {
 
-    return fetch(`${devUrl}/details/${noteId}`);
+    return await fetch(`${devUrl}/details/${noteId}`);
 
 }

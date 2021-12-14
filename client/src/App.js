@@ -49,7 +49,7 @@ function App() {
               <Route path="/notes/my-notes" element={<MyNotesComponent />} />
              
               <Route path="/auth/users" element={<TeamComponent />} />
-              <Route path="/notes/details/:noteId" element={<DetailsComponent/>} />
+              <Route path="/notes/details/:id" element={<DetailsComponent/>} />
 
             </Routes>
         </main>
