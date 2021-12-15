@@ -4,6 +4,7 @@ import './Header.css'
 const HeaderComponent = ({
     username, logout
 }) => {
+    
 
     let guestNavbar = (
         <Nav>
@@ -17,7 +18,7 @@ const HeaderComponent = ({
             <Nav.Link> Hello, {username}</Nav.Link>
             <Nav.Link href="/notes/my-notes">My Notes</Nav.Link>
             <Nav.Link href="/team">Team Members</Nav.Link>
-            <Nav.Link href="/auth/logout" onClick={logout}>Logout</Nav.Link>
+            <Nav.Link onClick={logout}>Logout</Nav.Link>
         </Nav>
     );
 

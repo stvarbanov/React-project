@@ -30,7 +30,7 @@ function App() {
     setUser(authData);
   }
   const logout = () => {
-    console.log('logged out')
+    localStorage.clear();
   }
 
   return (
