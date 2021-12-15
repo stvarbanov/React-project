@@ -49,8 +49,17 @@ router.get('/details/:noteId', async (req, res) => {
 router.get('/owner/:userId', async (req, res) => {
     await notesService.getNotesOfUser(req.params.userId)
         .then(data => {
-            console.log(data);
+        
             res.status(201).json({ notes: data });
+        })
+        .catch(err => console.log(err));
+
+});
+router.get('/all-users', async (req, res) => {
+    await notesService.getUsers()
+        .then(data => {
+           
+            res.status(201).json({ data: data });
         })
         .catch(err => console.log(err));
 

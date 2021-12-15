@@ -37,6 +37,8 @@ const getNotesOfUser = async (userId) => {
     return await Note.find({ owner: id });
 
 }
+const getUsers = async () => await User.find().populate('notes');
+
 
 module.exports = {
     createNote,
@@ -44,6 +46,7 @@ module.exports = {
     getInProgress,
     getAllDone,
     getNoteById,
-    getNotesOfUser
+    getNotesOfUser,
+    getUsers
 
 }

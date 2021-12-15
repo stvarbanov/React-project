@@ -44,12 +44,12 @@ function App() {
           <Routes>
             <Route path="/board/" element={<BoardComponent userId={user.id} />} />
             <Route path="/" element={<CarouselComponent />} />
-            
+
             <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
             <Route path="/auth/register" element={<RegisterComponent />} />
-            
+
             <Route path="/notes/my-notes" element={<MyNotesComponent userId={user.id} />} />
-            <Route path="/auth/users" element={<TeamComponent />} />
+            <Route path="/team" element={<TeamComponent userId={user.id} />} />
             <Route path="/notes/details/:noteId" element={<DetailsComponent userId={user.id} />} />
 
           </Routes>

@@ -16,7 +16,7 @@ const HeaderComponent = ({
         <Nav>
             <Nav.Link> Hello, {username}</Nav.Link>
             <Nav.Link href="/notes/my-notes">My Notes</Nav.Link>
-            <Nav.Link href="/auth/users">Team Members</Nav.Link>
+            <Nav.Link href="/team">Team Members</Nav.Link>
             <Nav.Link href="/auth/logout" onClick={logout}>Logout</Nav.Link>
         </Nav>
     );

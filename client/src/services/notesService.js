@@ -40,3 +40,8 @@ export const getUserNotes = async (userId) => {
     return await fetch(`${devUrl}/owner/${userId}`);
 
 }
+export const getUsers = async () => {
+
+    return await fetch(`${devUrl}/all-users`);
+
+}

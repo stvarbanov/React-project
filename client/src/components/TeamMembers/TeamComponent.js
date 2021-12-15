@@ -1,20 +1,33 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Container, Row } from 'react-bootstrap';
 import ListOfUserComponent from '../Users/ListOfUsers.js';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import { getUsers } from '../../services/notesService.js';
 import './Team.css';
-const TeamComponent = () => {
+
+const TeamComponent = ({
+    userId
+}) => {
 
     const [users, setUsers] = useState([]);
 
-    //TODO get users
+    useEffect(async () => {
 
-    return (<Container >
-        <Row >
-            <h4>Users in this team</h4>
-            <ListOfUserComponent users={users} />
-        </Row>
-    </Container>
+        await getUsers()
+            .then(res => res.json())
+            .then((data) => {
+                setUsers(data.data);
+            });
+            console.log(users);
+    },[]);
+
+    return (
+        <Container >
+            <Row >
+                <h4>Users in this team</h4>
+                <ListOfUserComponent userId={userId} userData={users} />
+            </Row>
+        </Container>
     );
 }
 

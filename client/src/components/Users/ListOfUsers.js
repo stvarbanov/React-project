@@ -3,16 +3,14 @@ import { ListGroup } from 'react-bootstrap';
 import UserComponent from './UserComponent.js';
 
 const ListOfUserComponent = ({
-    users,
+    userData,
 }) => {
-
 
     return (
         <ListGroup.Item>
-            {users.map((x) =>              
-                <UserComponent key={x._id} user={x}  />
+            {userData.map((x) =>
+                <UserComponent key={x._id} user={x} />
             )}
-            
         </ListGroup.Item>
     );
 
