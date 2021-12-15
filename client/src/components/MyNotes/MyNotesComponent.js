@@ -16,7 +16,7 @@ const MyNotesComponent = ({
         await getUserNotes(userId)
             .then(res => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setmyNotes(data.notes);
             });
     }, []);

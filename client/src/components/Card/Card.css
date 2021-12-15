@@ -19,7 +19,7 @@
     
   }
 
-  .card-button,.card-button-delete{
+  .card-button,.card-button-delete, #dropdown-basic-button{
 
     height: auto;
     width: auto;
@@ -55,8 +55,15 @@
 #container:hover .card-button-see-details{
   visibility: visible;
 }
-.card-button-see-details, .Button{
+#container:hover #dropdown-basic-button{
+  visibility: visible;
+}
+.card-button-see-details, .Button, #dropdown-basic-button{
+  background-color: transparent !important;
+  color: black !important;
   visibility: hidden;
+  font-weight: 1000 !important;
+  font-family: 'Myriad Pro Regular';
   height: auto;
   width: auto ;
   align-items: center !important;
