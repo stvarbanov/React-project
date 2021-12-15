@@ -15,7 +15,7 @@ const HeaderComponent = ({
     let userNavbar = (
         <Nav>
             <Nav.Link> Hello, {username}</Nav.Link>
-            <Nav.Link href="/notes/my">My Notes</Nav.Link>
+            <Nav.Link href="/notes/my-notes">My Notes</Nav.Link>
             <Nav.Link href="/auth/users">Team Members</Nav.Link>
             <Nav.Link href="/auth/logout" onClick={logout}>Logout</Nav.Link>
         </Nav>

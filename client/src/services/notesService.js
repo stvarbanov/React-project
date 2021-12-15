@@ -35,3 +35,8 @@ export const getDetails = async (noteId) => {
     return await fetch(`${devUrl}/details/${noteId}`);
 
 }
+export const getUserNotes = async (userId) => {
+
+    return await fetch(`${devUrl}/owner/${userId}`);
+
+}

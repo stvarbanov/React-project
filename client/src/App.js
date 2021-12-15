@@ -36,25 +36,26 @@ function App() {
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
 
-          {/* <NotificationProvider> */}
+      {/* <NotificationProvider> */}
       <div className="App" notification>
         <HeaderComponent username={user.username} />
 
         <main>
-            <Routes>
-              <Route path="/board/" element={<BoardComponent userId={user.id} />} />
-              <Route path="/" element={<CarouselComponent />} />
-              <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
-              <Route path="/auth/register" element={<RegisterComponent />} />
-              <Route path="/notes/my-notes" element={<MyNotesComponent />} />
-             
-              <Route path="/auth/users" element={<TeamComponent />} />
-              <Route path="/notes/details/:noteId" element={<DetailsComponent userId={user.id} />} />
+          <Routes>
+            <Route path="/board/" element={<BoardComponent userId={user.id} />} />
+            <Route path="/" element={<CarouselComponent />} />
+            
+            <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
+            <Route path="/auth/register" element={<RegisterComponent />} />
+            
+            <Route path="/notes/my-notes" element={<MyNotesComponent userId={user.id} />} />
+            <Route path="/auth/users" element={<TeamComponent />} />
+            <Route path="/notes/details/:noteId" element={<DetailsComponent userId={user.id} />} />
 
-            </Routes>
+          </Routes>
         </main>
       </div>
-          {/* </NotificationProvider> */}
+      {/* </NotificationProvider> */}
     </AuthContext.Provider>
   );
 }

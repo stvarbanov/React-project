@@ -1,6 +1,7 @@
 
 const Note = require('../models/Note.js');
 const User = require('../models/User');
+const mongoose = require('mongoose');
 // const { nameValidation, numberValidation } = require('../validation/NotesValidation');
 
 const createNote = async (title, userId) => {
@@ -30,12 +31,19 @@ const getInProgress = async () => await Note.find({ state: 'In Progress' }).popu
 const getAllDone = async () => await Note.find({ state: 'Done' }).populate('owner');
 
 const getNoteById = async (noteId) => await Note.findById(noteId).populate('owner');
+const getNotesOfUser = async (userId) => {
+
+    var id = mongoose.Types.ObjectId(userId);
+    return await Note.find({ owner: id });
+
+}
 
 module.exports = {
     createNote,
     getAllToDos,
     getInProgress,
     getAllDone,
-    getNoteById
+    getNoteById,
+    getNotesOfUser
 
 }

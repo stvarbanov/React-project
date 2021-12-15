@@ -17,18 +17,12 @@ const DetailsComponent = ({
 
         getDetails(noteId)
             .then(res => res.json())
-            .then(data => {
+            .then((data) => {
                 // console.log(data.data)
                 setInfo(data.data);
-            })
-            .catch(err => console.log(err));
+            });
 
-        const ownerArr = info.owner;
-        console.log(ownerArr);
     })
-
-
-
 
     //TODO if owner - editable data, else - only read
     return (
