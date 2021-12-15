@@ -31,19 +31,19 @@ router.get('/in-progress', (req, res) => {
 });
 router.get('/done', (req, res) => {
     notesService.getAllDone()
-    .then(data => {
-        res.status(201).json({ done: data });
-    })
-    .catch(err => console.log(err));
+        .then(data => {
+            res.status(201).json({ done: data });
+        })
+        .catch(err => console.log(err));
 
 });
 
-router.get('/details/:noteId', (req, res) => {
-    notesService.getNoteById(req.params.noteId)
-    .then(data => {
-        res.status(201).json({note:data});
-    })
-    .catch(err => console.log(err));
+router.get('/details/:noteId', async (req, res) => {
+    await notesService.getNoteById(req.params.noteId)
+        .then(data => {
+            res.status(201).json({ data });
+        })
+        .catch(err => console.log(err));
 
 });
 

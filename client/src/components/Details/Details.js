@@ -1,42 +1,47 @@
 
 import './Details.css'
 import { getDetails } from '../../services/notesService.js';
-import { useNavigate, } from 'react-router';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
-const DetailsComponent = () => {
+const DetailsComponent = ({
+    userId
+}) => {
 
- 
-    const [data, setData] = useState({});
-    const { id } = useParams();
+
+    const [info, setInfo] = useState({});
+    const { noteId } = useParams();
 
     useEffect(() => {
 
-        getDetails(id)
+        getDetails(noteId)
             .then(res => res.json())
-            .then(note => {
-                // console.log(note.note);
-                setData(note.note);
+            .then(data => {
+                // console.log(data.data)
+                setInfo(data.data);
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
+
+        const ownerArr = info.owner;
+        console.log(ownerArr);
     })
 
 
+
+
+    //TODO if owner - editable data, else - only read
     return (
 
         <div className="input">
-            <h3>Title: {data.title}</h3>
-            <h3>State: {data.state}</h3>
-            <h3>Color: {data.color}</h3>
-            <h3>Owner: {data.owner}</h3>
-            <h3>Created: {data.createdAt}</h3>
+            <h3>Can not get owner...</h3>
+            <h3>Created: {info.createdAt}</h3>
+            <h3>Color: {info.color}</h3>
+            <h3>State: {info.state}</h3>
+            <h3>Title: {info.title}</h3>
         </div>
-
 
     );
 }
-
 
 export default DetailsComponent;

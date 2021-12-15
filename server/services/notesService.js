@@ -29,7 +29,7 @@ const getAllToDos = async () => await Note.find({ state: 'To Do' }).populate('ow
 const getInProgress = async () => await Note.find({ state: 'In Progress' }).populate('owner');
 const getAllDone = async () => await Note.find({ state: 'Done' }).populate('owner');
 
-const getNoteById = async (noteId) => await Note.findById(noteId);
+const getNoteById = async (noteId) => await Note.findById(noteId).populate('owner');
 
 module.exports = {
     createNote,
