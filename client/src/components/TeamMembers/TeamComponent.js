@@ -18,7 +18,7 @@ const TeamComponent = ({
             .then((data) => {
                 setUsers(data.data);
             });
-            console.log(users);
+            
     },[]);
 
     return (
