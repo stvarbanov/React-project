@@ -10,9 +10,7 @@ const AddCardComponent = ({
         e.preventDefault();
 
         const title = document.getElementById('title-add').value;
-
         createNote(title, userId );
-
 
     }
     return (

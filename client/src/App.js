@@ -30,6 +30,7 @@ function App() {
     setUser(authData);
   }
   const logout = () => {
+    alert('Logging out!')
     localStorage.clear();
   }
 
@@ -38,7 +39,7 @@ function App() {
 
       {/* <NotificationProvider> */}
       <div className="App" notification>
-        <HeaderComponent username={user.username} />
+        <HeaderComponent username={user.username} logoutOnclick={logout} />
 
         <main>
           <Routes>
