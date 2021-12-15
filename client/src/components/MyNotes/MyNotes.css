@@ -1,11 +1,13 @@
-Col {border-style: dotted;
 
+.list-group-itemF{
+    background-color:rgb(226, 187, 87);
+    font-family: 'Myriad Pro Regular';
+    border-radius: 14px;
+    border-color: blue;
+    border-width: 1px;
+    width: 50px;
 }
-
-.col-title{
-    font-size:xx-large;
-    justify-content: flex-end;
-    word-wrap: break-word;
-    font-weight: 300;
+.my-notes-list .list-group-item{
+    width: 60%;
+    left: 20%;
 }
-

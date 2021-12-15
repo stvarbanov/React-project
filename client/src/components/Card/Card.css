@@ -59,14 +59,14 @@
 .card-button-see-details, .Button{
   visibility: hidden;
   height: auto;
-  width: auto;
-  align-items: center;
-  padding: 10px;
-  border-radius: 60px;
-  justify-content: space-around;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  width: auto ;
+  align-items: center !important;
+  padding: 10px !important;
+  border-radius: 60px !important;
+  justify-content: space-around !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
 
 }
 

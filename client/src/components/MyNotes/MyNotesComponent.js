@@ -5,7 +5,7 @@ import { getUserNotes } from '../../services/notesService.js';
 import ListOfNotesComponent from '../Card/ListOfNotesComponent.js';
 
 import './MyNotes.css';
-import CardComponent from '../Card/CardComponent.js';
+
 const MyNotesComponent = ({
     userId
 }) => {
@@ -25,8 +25,9 @@ const MyNotesComponent = ({
     return (
         <Container >
             <h4>My notes </h4>
-            <ListOfNotesComponent userId={userId} notes={myNotes} />
-
+            <div className='my-notes-list'>
+                <ListOfNotesComponent userId={userId} notes={myNotes} />
+            </div>
         </Container>
     );
 }
