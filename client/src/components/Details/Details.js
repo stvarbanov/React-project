@@ -4,8 +4,8 @@ import './Details.css'
 import { getDetails } from '../../services/notesService.js';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Row } from 'react-bootstrap';
-import StateBtnComponent from '../Card/StateBtn.js'
+import { Row, Button, Col } from 'react-bootstrap';
+import StateBtnComponent from '../Card/StateBtn.js';
 
 
 const DetailsComponent = ({
@@ -39,8 +39,17 @@ const DetailsComponent = ({
                     <h3>State: {info.state}</h3>
                     <h3>Color: {info.color}</h3>
                     <h3>Created: {info.createdAt.split('T')[0]}</h3>
-                    <h3>Edit button</h3>
-                    <h3>Delete button</h3>
+                    <Row>
+                        <Col>
+                            <Button className="details-button-edit" href={'/notes/update/' + info._id} >Edit </Button>
+                        </Col>
+                        <Col>
+                            <Button className="details-button-delete" href={'/notes/delete/' + info._id} >Delete </Button>
+                        </Col>
+                        {/* <Col>
+                            <StateBtnComponent className='details-button-state' noteId={info._id} />
+                        </Col> */}
+                    </Row>
                 </Row>
             ) : (
                 <Row>

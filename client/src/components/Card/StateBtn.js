@@ -1,9 +1,8 @@
 
-import { useEffect } from 'react';
-import { Button, DropdownButton, Dropdown, Col, Row } from 'react-bootstrap';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { setNoteToDo, setNoteInProgress, setNoteDone } from '../../services/notesService.js';
-import './Card.css'
+
 
 const StateBtnComponent = ({
     noteId
@@ -42,7 +41,7 @@ const StateBtnComponent = ({
 
     return (
         <div className="dropdown">
-            <DropdownButton id="dropdown-basic-button" title="Change State">
+            <DropdownButton id="dropdown-basic-button" title="Move">
                 <Dropdown.Item onClick={setToDo}>To do</Dropdown.Item>
                 <Dropdown.Item onClick={setInProgress}>In Progress</Dropdown.Item>
                 <Dropdown.Item onClick={setDone}>Done</Dropdown.Item>

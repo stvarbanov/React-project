@@ -28,7 +28,7 @@ const CardComponent = ({
                     <Row>
                         <Col>
                             <StateBtnComponent noteId={note._id} />
-                            <Button className="card-button-see-details" href={'/notes/details/' + note._id} >Show Details</Button>
+                            <Button className="card-button-see-details" href={'/notes/details/' + note._id} >...</Button>
                         </Col>
                     </Row>
                 </div>
