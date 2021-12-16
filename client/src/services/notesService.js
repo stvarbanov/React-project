@@ -78,3 +78,16 @@ export const setNoteDone = async (noteId) => {
     });
 
 }
+
+export const deleteNote = async (noteId) => {
+
+    return await fetch(`${devUrl}/delete/${noteId}`, {
+        method: 'DELETE',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}
+

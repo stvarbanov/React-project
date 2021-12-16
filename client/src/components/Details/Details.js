@@ -1,17 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import './Details.css'
-import { getDetails } from '../../services/notesService.js';
-import { useParams } from 'react-router-dom';
+import { getDetails, deleteNote } from '../../services/notesService.js';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Row, Button, Col } from 'react-bootstrap';
-import StateBtnComponent from '../Card/StateBtn.js';
+
+
 
 
 const DetailsComponent = ({
     userId
 }) => {
-
+    const navigate = useNavigate();
     const [info, setInfo] = useState({});
     const [isOwner, setIsOwner] = useState(false);
     const { noteId } = useParams();
@@ -29,6 +30,15 @@ const DetailsComponent = ({
             });
     })
 
+    const deleteNote = async () => {
+  
+        await deleteNote(noteId)
+            .then(() => {
+                navigate('/board');
+            });
+
+    }
+
     return (
 
         <div className="details">
@@ -44,7 +54,7 @@ const DetailsComponent = ({
                             <Button className="details-button-edit" href={'/notes/update/' + info._id} >Edit </Button>
                         </Col>
                         <Col>
-                            <Button className="details-button-delete" href={'/notes/delete/' + info._id} >Delete </Button>
+                            <Button className="details-button-delete" href='#' onClick={deleteNote} >Delete </Button>
                         </Col>
                         {/* <Col>
                             <StateBtnComponent className='details-button-state' noteId={info._id} />

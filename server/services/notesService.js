@@ -40,8 +40,9 @@ const updateNoteById = async (noteId, state) => {
     const note = await Note.findById(noteId);
     note.state = state;
     return note.save();
-
 }
+const deleteOne = async (noteId) => await Note.findOneAndDelete(noteId);
+
 module.exports = {
     createNote,
     getAllToDos,
@@ -50,6 +51,7 @@ module.exports = {
     getNoteById,
     getNotesOfUser,
     getUsers,
-    updateNoteById
+    updateNoteById,
+    deleteOne
 
 }

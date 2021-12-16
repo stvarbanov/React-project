@@ -87,6 +87,13 @@ router.post('/:noteId/set-done', async (req, res) => {
         })
         .catch(err => console.log(err));
 });
+router.delete('/delete/:noteId/', async (req, res) => {
+    await notesService.deleteOne(req.params.noteId)
+        .then(data => {
+            res.status(200).json({ data: data });
+        })
+        .catch(err => console.log(err));
+});
 
 
 
