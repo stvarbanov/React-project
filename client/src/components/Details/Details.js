@@ -37,16 +37,17 @@ const DetailsComponent = ({
         <div className="details">
             {isOwner ? (
                 <Row>
+                    <h3> Edit your note: </h3>
                     <h3>Title: {info.title}</h3>
                     <h3>State: {info.state}</h3>
                     <h3>Color: {info.color}</h3>
-                    <h3>Created:{info.createdAt}</h3>
-                    <StateBtnComponent />
+                    <h3>Created: {info.createdAt.split('T')[0]}</h3>
                 </Row>
             ) : (
                 <Row>
-                    <h3>No owner</h3>
-                   
+                    <h3> Note Details: </h3>
+                    <h3>Title: {info.title}</h3>
+                    <h3>State: {info.state}</h3>
                 </Row>
             )}
         </div>
