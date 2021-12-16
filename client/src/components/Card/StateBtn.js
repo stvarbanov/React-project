@@ -1,30 +1,44 @@
 
+import { useEffect } from 'react';
 import { Button, DropdownButton, Dropdown, Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { setNoteToDo, setNoteInProgress, setNoteDone } from '../../services/notesService.js';
 import './Card.css'
 
-const StateBtnComponent = () => {
+const StateBtnComponent = ({
+    noteId
+}) => {
     const navigate = useNavigate();
 
     const setToDo = () => {
+        setNoteToDo(noteId)
+            .then(res => res.json())
+            .then(data => console.log(data));
 
-
-
+        window.location.reload(false);
         navigate('/board');
+
     }
+
     const setInProgress = () => {
+        setNoteInProgress(noteId)
+            .then(res => res.json())
+            .then(data => console.log(data));
 
-
-
+        window.location.reload(false);
         navigate('/board');
     }
+
     const setDone = () => {
 
+        setNoteDone(noteId)
+            .then(res => res.json())
+            .then(data => console.log(data));
 
-
+        window.location.reload(false);
         navigate('/board');
     }
-    
+
 
     return (
         <div className="dropdown">

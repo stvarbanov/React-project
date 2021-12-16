@@ -25,11 +25,9 @@ const createNote = async (title, userId) => {
 
     return await note.save();
 };
-
 const getAllToDos = async () => await Note.find({ state: 'To Do' }).populate('owner');
 const getInProgress = async () => await Note.find({ state: 'In Progress' }).populate('owner');
 const getAllDone = async () => await Note.find({ state: 'Done' }).populate('owner');
-
 const getNoteById = async (noteId) => await Note.findById(noteId).populate('owner');
 const getNotesOfUser = async (userId) => {
 
@@ -38,8 +36,12 @@ const getNotesOfUser = async (userId) => {
 
 }
 const getUsers = async () => await User.find().populate('notes');
+const updateNoteById = async (noteId, state) => {
+    const note = await Note.findById(noteId);
+    note.state = state;
+    return note.save();
 
-
+}
 module.exports = {
     createNote,
     getAllToDos,
@@ -47,6 +49,7 @@ module.exports = {
     getAllDone,
     getNoteById,
     getNotesOfUser,
-    getUsers
+    getUsers,
+    updateNoteById
 
 }

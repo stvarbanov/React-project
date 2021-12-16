@@ -4,7 +4,7 @@ import './Header.css'
 const HeaderComponent = ({
     username, logoutOnclick
 }) => {
-    
+
 
     let guestNavbar = (
         <Nav>
@@ -25,7 +25,7 @@ const HeaderComponent = ({
 
     return (
         <Navbar bg="light" expand="lg" sticky="top">
-            <Container>
+            <Container className='header-container'>
                 <Navbar.Brand href="/">Kanban Board</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

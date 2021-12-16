@@ -20,12 +20,9 @@ const DetailsComponent = ({
         await getDetails(noteId)
             .then(res => res.json())
             .then((data) => {
-
                 setInfo(data.data);
-
                 if (data.data.owner[0]._id == userId) {
                     setIsOwner(true);
-
                 } else {
                     setIsOwner(false);
                 }
@@ -42,12 +39,15 @@ const DetailsComponent = ({
                     <h3>State: {info.state}</h3>
                     <h3>Color: {info.color}</h3>
                     <h3>Created: {info.createdAt.split('T')[0]}</h3>
+                    <h3>Edit button</h3>
+                    <h3>Delete button</h3>
                 </Row>
             ) : (
                 <Row>
                     <h3> Note Details: </h3>
                     <h3>Title: {info.title}</h3>
                     <h3>State: {info.state}</h3>
+
                 </Row>
             )}
         </div>

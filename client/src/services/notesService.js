@@ -45,3 +45,36 @@ export const getUsers = async () => {
     return await fetch(`${devUrl}/all-users`);
 
 }
+export const setNoteToDo = async (noteId) => {
+
+    return await fetch(`${devUrl}/${noteId}/set-todo`, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}
+export const setNoteInProgress = async (noteId) => {
+
+    return await fetch(`${devUrl}/${noteId}/set-in-progress`, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}
+export const setNoteDone = async (noteId) => {
+
+    return await fetch(`${devUrl}/${noteId}/set-done`, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}

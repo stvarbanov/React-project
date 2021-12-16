@@ -1,24 +1,24 @@
 
 
 nav,
-footer {
-    background:grey;
+footer, .header-container, .navbar-expand-lg {
+    background:rgb(155, 177, 163); 
     justify-content: space-around;
-    font-family: 'Myriad Pro Regular';
+    font-family: 'Myriad Pro Regular' !important;
     font-weight: bold;
-    margin-bottom: 0!important;
+    /* margin-bottom: 0!important; */
+    
 }
 
 .nav-link{   text-decoration: none;
     border-radius: 50%;
     padding: 0.5em;
-    color: chartreuse;
     text-transform: uppercase;
 }
 
 nav a:hover,
 footer a:hover {
-    background-color:purple;
+    background-color:rgb(216, 135, 13);
 
 }
 

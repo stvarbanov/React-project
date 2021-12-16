@@ -14,6 +14,11 @@ const BoardComponent = ({
     const [inProgressNotes, setInProgressNotes] = useState([]);
     const [doneNotes, setDoneNotes] = useState([]);
 
+    const [added, setAdded] = useState(false);
+    if (added === true) {
+        window.location.reload(false);
+        setAdded(false);
+    }
     useEffect(async () => {
         await getToDos()
             .then(res => res.json())
@@ -42,7 +47,7 @@ const BoardComponent = ({
 
                 <ListOfNotesComponent userId={userId} notes={toDoNotes} />
                 {userId ? (
-                    <AddCardComponent userId={userId} />
+                    <AddCardComponent userId={userId} setAdded={setAdded} />
                 ) : (
                     <h4></h4>
                 )}
@@ -52,17 +57,17 @@ const BoardComponent = ({
             <Col>
                 <h4 className="col-title">IN PROGRESS</h4>
                 <ListGroup>
-            
-                        <ListOfNotesComponent userId={userId} notes={inProgressNotes} />
+
+                    <ListOfNotesComponent userId={userId} notes={inProgressNotes} />
 
                 </ListGroup>
             </Col>
             <Col>
                 <h4 className="col-title">DONE</h4>
                 <ListGroup>
-                   
-                        <ListOfNotesComponent userId={userId} notes={doneNotes} />
-                  
+
+                    <ListOfNotesComponent userId={userId} notes={doneNotes} />
+
 
                 </ListGroup>
             </Col>

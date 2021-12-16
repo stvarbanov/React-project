@@ -1,16 +1,19 @@
 
+import { useNavigate } from 'react-router-dom';
 import { createNote } from '../../services/notesService.js';
 import './Card.css'
 
 const AddCardComponent = ({
-    userId
+    userId, setAdded
 }) => {
+    const navigate = useNavigate();
 
     const addCardClick = e => {
         e.preventDefault();
 
         const title = document.getElementById('title-add').value;
-        createNote(title, userId );
+        createNote(title, userId);
+        setAdded(true);
 
     }
     return (

@@ -73,6 +73,7 @@
   font-size: 11px !important;
   text-transform: uppercase !important;
   letter-spacing: 0.2em !important;
+  
 
 }
 
@@ -110,5 +111,6 @@
       margin-left: 30px;
       margin-right: 20px;
       margin-bottom: 10px;
+      font-family: 'Myriad Pro Regular';
   
     }
