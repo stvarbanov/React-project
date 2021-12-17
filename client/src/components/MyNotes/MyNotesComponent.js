@@ -23,12 +23,12 @@ const MyNotesComponent = ({
 
 
     return (
-        <Container >
-            <h4>My notes </h4>
-            <div className='my-notes-list'>
+        <div className='my-notes-list'>
+            <Container >
+                <h4>My notes </h4>
                 <ListOfNotesComponent userId={userId} notes={myNotes} />
-            </div>
-        </Container>
+            </Container>
+        </div>
     );
 }
 

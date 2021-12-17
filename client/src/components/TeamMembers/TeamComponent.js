@@ -18,15 +18,16 @@ const TeamComponent = ({
             .then((data) => {
                 setUsers(data.data);
             });
-            
-    },[]);
+
+    }, []);
 
     return (
+
         <Container >
-            <Row >
+            <div className='team-list'>
                 <h4>Users in this team</h4>
                 <ListOfUserComponent userId={userId} userData={users} />
-            </Row>
+            </div>
         </Container>
     );
 }

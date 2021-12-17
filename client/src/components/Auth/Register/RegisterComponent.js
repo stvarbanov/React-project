@@ -25,6 +25,7 @@ const RegisterComponent = () => {
                 } else {
                     localStorage.setItem('user', JSON.stringify(res.user));
                     navigate('/');   
+                    window.location.reload(false);
                 }
 
             })

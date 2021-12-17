@@ -27,7 +27,9 @@ const LoginComponent = ({
                     // setErrorMessage(null)
                     localStorage.setItem('user', JSON.stringify(res.user));
                     isLogin(res.user);
+                  
                     navigate('/');   
+                    window.location.reload(false);
                 }
             });
 
