@@ -1,13 +1,14 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { AuthContext } from '../src/contexts/AuthContext.js';
+import { Routes, Route } from 'react-router-dom';
+
 import BoardComponent from './components/BoardComponent/BoardComponent.js';
 import HeaderComponent from './components/Header/HeaderComponent.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import CarouselComponent from './components/CarouselComponent/CarouselComponent.js';
 import LoginComponent from './components/Auth/Login/LoginComponent.js';
 import RegisterComponent from './components/Auth/Register/RegisterComponent.js';
 import MyNotesComponent from './components/MyNotes/MyNotesComponent.js';
-import { Routes, Route } from 'react-router-dom';
-import { AuthContext } from '../src/contexts/AuthContext.js';
 import useLocalStorage from '../src/hooks/useLocalStorage.js';
 import TeamComponent from './components/TeamMembers/TeamComponent.js';
 import DetailsComponent from './components/Details/Details.js';
@@ -22,8 +23,8 @@ const initialAuthState = {
 
 function App() {
 
-  const [user, setUser] = useLocalStorage('user', initialAuthState)
-
+  const [user, setUser] = useLocalStorage('user', initialAuthState);
+  
   const login = (authData) => {
     setUser(authData);
   }
@@ -48,15 +49,16 @@ function App() {
             <Route path="/auth/login" element={<LoginComponent isLogin={login} />} />
             <Route path="/auth/register" element={<RegisterComponent />} />
 
-            <Route path="/notes/my-notes" element={<MyNotesComponent userId={user.id} />} />
+            <Route path="/notes/my-notes" element={<MyNotesComponent user={user} userId={user.id} />} />
             <Route path="/team" element={<TeamComponent userId={user.id} />} />
             <Route path="/notes/details/:noteId" element={<DetailsComponent userId={user.id} />} />
+
 
           </Routes>
         </main>
       </div>
       {/* </NotificationProvider> */}
-
+    
     </AuthContext.Provider>
   );
 }

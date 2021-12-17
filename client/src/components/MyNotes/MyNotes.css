@@ -1,6 +1,5 @@
 
 .list-group-itemF{
-    background-color:rgb(226, 187, 87);
     font-family: 'Myriad Pro Regular';
     border-radius: 14px;
     border-color: blue;
@@ -12,7 +11,7 @@
     left: 20%;
 }
 
-.col-title-text{
+.col-title-text, .my-user{
 
     font-size: 1.4em;
     color: coral;

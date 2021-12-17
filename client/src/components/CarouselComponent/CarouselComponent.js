@@ -1,5 +1,5 @@
 import { Carousel, Button } from 'react-bootstrap';
-// import './Carousel.css'
+
 const CarouselComponent = () => {
 
     return (
@@ -9,7 +9,7 @@ const CarouselComponent = () => {
                     className="d-block w-100"
                     src="https://d57439wlqx3vo.cloudfront.net/iblock/fc8/fc82437089559312a666656c7654ef4e/aaad6542315d596027ddc0bea5cb11db.jpg"
                     alt="First slide"
-                    height='350'
+                    height='450'
                     width='70%'
                 />
                 <Carousel.Caption>
@@ -24,7 +24,7 @@ const CarouselComponent = () => {
                     className="d-block w-100"
                     src="https://netmind.net/en/wp-content/uploads/2020/07/Kanban-Method-Best-Practice_FB.jpg"
                     alt="Second slide"
-                    height='350'
+                    height='450'
                     width='70%'
                 />
                 <Carousel.Caption>
@@ -41,7 +41,7 @@ const CarouselComponent = () => {
                     className="d-block w-100"
                     src="https://study.com/cimages/videopreview/fvjfat0gym.jpg"
                     alt="Second slide"
-                    height='350'
+                    height='450'
                     width='70%'
                 />
                 <Carousel.Caption>

@@ -21,7 +21,7 @@ const TeamComponent = ({
             .then((data) => {
                 setUsers(data.data);
             });
-            console.log(users);
+        console.log(users);
     }, []);
     //TODO - show small notes for each user
 
@@ -36,7 +36,7 @@ const TeamComponent = ({
             </Col>
             <Col>
                 <div className='team-notes-list'>
-                  
+                    {/* <h4 className='team-title'>Hover on user to see the notes</h4> */}
                     {/* {users.map((x) =>
                     
                         <SmallCardComponet />

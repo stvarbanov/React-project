@@ -3,14 +3,19 @@ import { Container, Row } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { getUserNotes } from '../../services/notesService.js';
 import ListOfNotesComponent from '../Card/ListOfNotesComponent.js';
+import UserComponent from '../../components/Users/UserComponent.js';
 
 import './MyNotes.css';
 
 const MyNotesComponent = ({
-    userId
-}) => { 
+    user, userId
+}) => {
 
     const [myNotes, setmyNotes] = useState([]);
+
+    let color = user.color;
+    const styleRules = { background: color };
+
 
     useEffect(async () => {
         await getUserNotes(userId)
