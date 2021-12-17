@@ -18,7 +18,7 @@ const HeaderComponent = ({
         <Nav>
             <Nav.Link href="/notes/my-notes">My Notes</Nav.Link>
             <Nav.Link href="/team">Team Members</Nav.Link>
-            <Nav.Link href={"/team/" + userId} id="logged-as"> Logged as: {username}</Nav.Link>
+            <Nav.Link  id="logged-as"> Logged as: {username}</Nav.Link>
             <Nav.Link onClick={logoutOnclick}>Logout</Nav.Link>
         </Nav>
     );
