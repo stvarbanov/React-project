@@ -1,8 +1,9 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
+import AddCardComponent from '../Card/addCard.js';
 import './Header.css'
 
 const HeaderComponent = ({
-    username, logoutOnclick
+    username, logoutOnclick, userId
 }) => {
 
 
@@ -15,9 +16,9 @@ const HeaderComponent = ({
 
     let userNavbar = (
         <Nav>
-            <Nav.Link> Hello, {username}</Nav.Link>
             <Nav.Link href="/notes/my-notes">My Notes</Nav.Link>
             <Nav.Link href="/team">Team Members</Nav.Link>
+            <Nav.Link href={"/team/" + userId} id="logged-as"> Logged as: {username}</Nav.Link>
             <Nav.Link onClick={logoutOnclick}>Logout</Nav.Link>
         </Nav>
     );
@@ -26,13 +27,11 @@ const HeaderComponent = ({
     return (
         <Navbar bg="light" expand="lg" sticky="top">
             <Container className='header-container'>
-                <Navbar.Brand href="/">Kanban Board</Navbar.Brand>
+                <Nav.Link href="/">Kanban Board</Nav.Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="justify-content-end" style={{ width: "100%" }}>
-
                         <Nav.Link href="/board/">Board</Nav.Link>
-
                         {username
                             ? userNavbar
                             : guestNavbar

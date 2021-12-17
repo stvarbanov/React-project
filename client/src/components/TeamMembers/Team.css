@@ -18,3 +18,9 @@
     width: 40%;
 
 }
+.team-title{
+    font-size: 1.4em;
+    color: coral;
+    font-weight: 500;
+    font-family: 'Myriad Pro Regular' !important;
+}

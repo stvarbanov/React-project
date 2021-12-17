@@ -9,5 +9,13 @@
 }
 .my-notes-list .list-group-item{
     width: 60%;
-    left: 20%
+    left: 20%;
+}
+
+.col-title-text{
+
+    font-size: 1.4em;
+    color: coral;
+    font-weight: 500;
+    font-family: 'Myriad Pro Regular' !important;
 }

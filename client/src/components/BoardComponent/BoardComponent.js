@@ -44,31 +44,24 @@ const BoardComponent = ({
         <Row >
             <Col >
                 <h4 className="col-title">TO DO</h4>
-
                 <ListOfNotesComponent userId={userId} notes={toDoNotes} />
                 {userId ? (
                     <AddCardComponent userId={userId} setAdded={setAdded} />
                 ) : (
                     <h4></h4>
                 )}
-
             </Col>
 
             <Col>
                 <h4 className="col-title">IN PROGRESS</h4>
                 <ListGroup>
-
                     <ListOfNotesComponent userId={userId} notes={inProgressNotes} />
-
                 </ListGroup>
             </Col>
             <Col>
                 <h4 className="col-title">DONE</h4>
                 <ListGroup>
-
                     <ListOfNotesComponent userId={userId} notes={doneNotes} />
-
-
                 </ListGroup>
             </Col>
 

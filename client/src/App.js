@@ -14,13 +14,11 @@ import DetailsComponent from './components/Details/Details.js';
 // import { NotificationProvider } from './contexts/NotificationContext.js';
 // import Notification from './components/Notification/Notification.js';
 
-
 const initialAuthState = {
   id: '',
   email: '',
   username: '',
 };
-
 
 function App() {
 
@@ -40,7 +38,7 @@ function App() {
 
       {/* <NotificationProvider> */}
       <div className="App" notification>
-        <HeaderComponent username={user.username} logoutOnclick={logout} />
+        <HeaderComponent username={user.username} userd={user.id} logoutOnclick={logout} />
 
         <main>
           <Routes>
@@ -58,6 +56,7 @@ function App() {
         </main>
       </div>
       {/* </NotificationProvider> */}
+
     </AuthContext.Provider>
   );
 }

@@ -6,9 +6,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Row, Button, Col } from 'react-bootstrap';
 
-
-
-
 const DetailsComponent = ({
     userId
 }) => {
@@ -28,15 +25,14 @@ const DetailsComponent = ({
                     setIsOwner(false);
                 }
             });
-    })
+    });
 
-    const deleteNote = async () => {
-  
-        await deleteNote(noteId)
+    const deleteNote = () => {
+
+         deleteNote(noteId)
             .then(() => {
-                navigate('/board');
+                // navigate('/board');
             });
-
     }
 
     return (
@@ -51,10 +47,10 @@ const DetailsComponent = ({
                     <h3>Created: {info.createdAt.split('T')[0]}</h3>
                     <Row>
                         <Col>
-                            <Button className="details-button-edit" href={'/notes/update/' + info._id} >Edit </Button>
+                            <Button className="details-button-edit" href={'/notes/update/' + info._id} > Edit </Button>
                         </Col>
                         <Col>
-                            <Button className="details-button-delete" href='#' onClick={deleteNote} >Delete </Button>
+                            <Button className="details-button-delete" href='#' onClick={deleteNote} > Delete </Button>
                         </Col>
                         {/* <Col>
                             <StateBtnComponent className='details-button-state' noteId={info._id} />

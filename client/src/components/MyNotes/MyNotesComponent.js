@@ -8,7 +8,7 @@ import './MyNotes.css';
 
 const MyNotesComponent = ({
     userId
-}) => {
+}) => { 
 
     const [myNotes, setmyNotes] = useState([]);
 
@@ -25,7 +25,7 @@ const MyNotesComponent = ({
     return (
         <div className='my-notes-list'>
             <Container >
-                <h4>My notes </h4>
+                <h4 className='col-title-text'>MY NOTES </h4>
                 <ListOfNotesComponent userId={userId} notes={myNotes} />
             </Container>
         </div>

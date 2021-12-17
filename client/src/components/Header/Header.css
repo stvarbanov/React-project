@@ -2,7 +2,7 @@
 
 nav,
 footer, .header-container, .navbar-expand-lg {
-    background:rgb(155, 177, 163); 
+
     justify-content: space-around;
     font-family: 'Myriad Pro Regular' !important;
     font-weight: bold;
@@ -14,11 +14,19 @@ footer, .header-container, .navbar-expand-lg {
     border-radius: 50%;
     padding: 0.5em;
     text-transform: uppercase;
+    color:black !important
 }
 
-nav a:hover,
-footer a:hover {
+
+nav a:hover {
     background-color:rgb(216, 135, 13);
 
 }
 
+#logged-as{
+    color:rgb(216, 135, 13) !important;
+}
+nav:hover #logged-as{
+  color:black !important
+
+}
